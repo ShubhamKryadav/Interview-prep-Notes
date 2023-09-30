@@ -1,0 +1,310 @@
+What is Kubernetes?The Cloud Native Computing Foundation currently maintains Kubernetes.
+ Kubernetes is an open-source container orchestration tool or system that is used to automate tasks such as the management, monitoring, scaling, and deployment of containerized applications. It is used to easily manage several containers (since it can handle grouping of containers), which provides for logical units that can be discovered and managed.
+ 
+What is orchestration when it comes to software and DevOps? 
+  Orchestration refers to the integration of multiple services that allows them to automate processes or synchronize information in a timely fashion.
+  
+How are Kubernetes and Docker related?
+   Docker is an open-source platform used to handle software development. Its main benefit is that it packages the settings and dependencies that the software/application needs to run into a container, which allows for portability and several other advantages. Kubernetes allows for the manual linking and orchestration of several containers, running on multiple hosts that have been created using Docker. 
+   
+What are the main differences between the Docker Swarm and Kubernetes?
+Docker Swarm can’t do auto-scaling (as can Kubernetes); however, Docker scaling is five times faster than Kubernetes 
+Docker Swarm doesn’t have a GUI; Kubernetes has a GUI in the form of a dashboard 
+Docker Swarm does automatic load balancing of traffic between containers in a cluster, while Kubernetes requires manual intervention for load balancing such traffic 
+Docker can deploy rolling updates but can’t deploy automatic rollbacks; Kubernetes can deploy rolling updates as well as automatic rollbacks
+
+What are the features of Kubernetes?
+Kubernetes manages various clusters at the same time. 
+Kubernetes self-monitors the health of nodes and containers. 
+With Kubernetes, users can scale resources not only vertically but also horizontally that too easily and quickly.
+
+What are the main components of Kubernetes architecture?
+There are two primary components of Kubernetes Architecture: the master node and the worker node. Each of these components has individual components in them.
+Master:
+A collection of components that make up the control panel of Kubernetes
+Consists of both scheduling and cluster events
+Node
+A single host capable of running on a virtual machine
+Runs both Kube-proxy and Kubelet, which are a part of the cluster
+After going through the introduction to Kubernetes architecture, let us next understand the need for the containers.
+
+
+Need for Containers
+With the ever-expanding presence of technology in our lives, downtime on the internet is becoming unacceptable. Hence, developers need to find solutions to maintain and update the infrastructure of the applications we depend on without interrupting other services people depend on. 
+
+The solution is container deployment. Containers work in isolated environments, making it easy for developers to build and deploy apps.
+
+
+What is a node in Kubernetes?
+A node is the smallest fundamental unit of computing hardware.It represents a single machine in a cluster, which could be a physical machine in a data center or a virtual machine from a cloud provider.
+What is a Nodes?
+A node is a worker machine on Kubernetes. It is a Virtual Machine or a physical machine based on the cluster. The master maintains the code, and each node contains the necessary components required to run the Kubernetes cluster. 
+
+In Kubernetes, there are two types of nodes, Master Node and Slave Node.
+
+What is cluster ?
+Kubernetes clusters make up the master and slave node and manage it as a whole. There can be more than one cluster in Kubernetes.
+
+What is Persistent Volumes ?
+Kubernetes persistent volumes are administrator provisioned volumes and Has identifying characteristics such as volume IDs and a name.
+Kubernetes Persistent Volumes remain on a pod even after the pod is deleted. It’s used for the temporary storage of data.
+
+Pods
+A Kubernetes pod is a group of containers deployed together on the same host. Pods operate one level higher than individual containers, and these groups of containers work together to operate for a single process. Pods provide two different types of shared resources: networking and storage, and are the units of replication in Kubernetes.
+
+
+What process runs on Kubernetes Master Node?
+The Kube-api server process runs on the master node and serves to scale the deployment of more instances.
+
+
+What is ‘Heapster’ in Kubernetes?
+A Heapster is a performance monitoring and metrics collection system for data collected by the Kublet. 
+
+ What is a Namespace in Kubernetes?
+Namespaces are used for dividing cluster resources between multiple users. They are meant for environments where there are many users spread across projects or teams and provide a scope of resources.
+
+Name the initial namespaces from which Kubernetes starts?
+Default
+Kube – system
+Kube – public
+
+What is the Kubernetes controller manager?
+The controller manager is a daemon that is used for embedding core control loops, garbage collection, and Namespace creation. It enables the running of multiple processes on the master node even though they are compiled to run as a single process.
+
+
+What are the types of controller managers?
+The primary controller managers that can run on the master node are the endpoints controller, service accounts controller, namespace controller, node controller, token controller, and replication controller.
+
+
+What is etcd?
+Kubernetes uses etcd as a distributed key-value store for all of its data, including metadata and configuration data, and allows nodes in Kubernetes clusters to read and write data. Etcd represents the state of a cluster at a specific moment in time
+
+What are the different services within Kubernetes?
+Different types of Kubernetes services include: 
+
+Cluster IP service
+Node Port service
+External Name Creation service and 
+Load Balancer service
+
+What is ClusterIP?
+The ClusterIP is the default Kubernetes service that provides a service inside a cluster (with no external access) that other apps inside your cluster can access. 
+
+What is NodePort? 
+The NodePort service is the most fundamental way to get external traffic directly to your service. It opens a specific port on all Nodes and forwards any traffic sent to this port to the service.
+
+What is the LoadBalancer in Kubernetes? 
+The LoadBalancer service is used to expose services to the internet. A Network load balancer, for example, creates a single IP address that forwards all traffic to your service. 
+
+
+What do you understand by Cloud controller manager?
+Cloud Controller Manager, it is the control panel component that embeds the cloud-specific control logic. This process lets you link the cluster into the cloud provider's API 
+
+What is Container resource monitoring?
+This refers to the activity that collects the metrics and tracks the health of containerized applications and microservices environments. It helps to improve health and performance and also makes sure that they operate smoothly.
+
+ What is Kubelet?
+The kubelet is a service agent that controls and maintains a set of pods by watching for pod specs through the Kubernetes API server. It preserves the pod lifecycle by ensuring that a given set of containers are all runni  ng as they should. The kubelet runs on each node and enables the communication between the master and slave nodes.
+
+What is Kubectl?
+Kubectl is a CLI (command-line interface) that is used to run commands against Kubernetes clusters. As such, it controls the Kubernetes cluster manager through different create and manage commands on the Kubernetes component
+
+How can you get a static IP for a Kubernetes load balancer? 
+A static IP for the Kubernetes load balancer can be achieved by changing DNS records since the Kubernetes Master can assign a new static IP address.
+
+How does Kubernetes achieve high availability?
+Kubernetes achieves high availability through various components and strategies, including pod replication, node-level redundancy, service discovery and load balancing, and the use of persistent volumes and StatefulSets. 
+
+What is high availability in Kubernetes?
+High availability in Kubernetes refers to the ability of applications and services to remain operational and accessible even in the event of failures or disruptions. It involves replicating pods, distributing them across nodes, utilizing load balancing, and implementing fault tolerance mechanisms to ensure uninterrupted service.
+
+What is the concept of ingress in Kubernetes?
+Kubernetes Ingress is an API object that helps developers expose their applications and manage external access by providing http/s routing rules to the services within a Kubernetes cluster.
+
+What is the use of the JENKINS_HOME directory?
+JENKINS_HOME directory is the place where all the settings, logs, and configurations are stored. It stores all this information in XML files. 
+
+Kubeadm
+Kubeadm is a tool built to provide kubeadm init and kubeadm join as best-practice "fast paths" for creating Kubernetes clusters.
+
+kubeadm performs the actions necessary to get a minimum viable cluster up and running. By design, it cares only about bootstrapping, not about provisioning machines.
+kubeadm init to bootstrap a Kubernetes control-plane node
+kubeadm join to bootstrap a Kubernetes worker node and join it to the cluster
+
+What is a cluster in Kubernetes?
+What is a Kubernetes cluster? A Kubernetes cluster is a set of nodes that run containerized applications. Containerizing applications packages an app with its dependences and some necessary services. They are more lightweight and flexible than virtual machines.
+
+AWS Lambda:
+Run code without provisioning or managing infrastructure. Simply write and upload code as a .zip file or container image.Save costs by paying only for the compute time you use—by the millisecond—
+AWS Lambda Components
+Function: this is where the actual code that performs the task lives.
+Configuration: This component specifies how the function is to be executed.
+Event Source: This is the event that triggers the function and can be triggered by multiple AWS services or a third-party service.
+
+CloudFormation is an infrastructure automation platform for AWS that deploys AWS resources in a repeatable, testable and auditable manner.You can use CloudFormation to automate the configuration of workloads that run on the most popular AWS services, like the EC2 compute service, the S3 storage service, and the IAM service for configuring access control.
+
+Prometheus:Prometheus is a free software application used for event monitoring and alerting. It records metrics in a time series database built using an HTTP pull model, with flexible queries and real-time alerting.
+
+What is Grafana used for monitoring?
+Companies use Grafana to monitor their infrastructure and log analytics, predominantly to improve their operational efficiency. Dashboards make tracking users and events easy as it automates the collection, management, and viewing of data.
+
+Difference btwn private ad public subnet?
+Public subnets are typically used to host resources that are accessible from the public internet, such as web servers or load balancers, while private subnets are used to host resources that should not be accessible from the internet, such as database servers or internal applications.
+
+Types of Load Balancer are :
+Elastic Load Balancing supports four types of load balancers: Application Load Balancers, Network Load Balancers, Gateway Load Balancers, and Classic Load Balancers. 
+
+Where is ConfigMap stored in Kubernetes?
+Where Are Kubernetes ConfigMaps Stored? Kubernetes stores API objects like ConfigMaps and Secrets within the etcd cluster.
+
+What is etcd in Kubernetes?
+etcd is an open source distributed key-value store used to hold and manage the critical information that distributed systems need to keep running.
+etcd data is stored in folder /var/lib/etcd  
+
+=====================================================================================================================
+Kubernetes :
+
+What is Image pull policy in Kubernetes ?
+Kubernetes Image Policy is a mechanism in Kubernetes that allows you to restrict the images that can be pulled from a repository.
+By Default is the image tag is latest then imagePullPolicy to Always .
+There are three image policy pull options for Kubernetes.
+1. Always     --> If imagePullPolicy is set to Always, Kubernetes will always pull the image from the Repository.
+2.IfNotPresent--> With IfNotPresent, Kubernetes will only pull the image when it does not already exist on the node.
+3.Never       --> While with imagePullPolicy set to Never, Kubernetes will never pull the image.
+
+WHat is service in Kubernetes ?
+In Kubernetes, a Service is a method for exposing a network application that is running as one or more Pods in your cluster. 
+There are four types of Kubernetes services — ClusterIP , NodePort , LoadBalancer and ExternalName 
+1. CLuster IP:	The ClusterIP is the default Kubernetes service that provides a service inside a cluster (with no external access) that other apps inside your cluster can access. 
+2. NodePort :	The NodePort service is the most fundamental way to get external traffic directly to your service. It opens a specific port on all Nodes and forwards any traffic sent to this port to the service.
+3.LoadBalancer :	The LoadBalancer service is used to expose services to the internet. A Network load balancer, for example, creates a single IP address that forwards all traffic to your service.
+ExternalName:	Services of type ExternalName map a Service to a DNS name, not to a typical selector such as my-service. 
+
+
+Difference Between Deployment & Daemon Set?
+Deploment makes the POD available in any node  But daemonset make sure that the replicas of Pod runs in each and every node of Cluster.
+
+=========================================================AWS Services Questions===============================================================================
+=========================================================AWS Services Questions===============================================================================
+What is NACL & does it different from Subnet ?
+
+What is autoscaling group and types of Autoscaling 
+What is EBS & Volume in terms of EC2 ?
+
+What is AWS WAF? 
+AWS WAF is a web application firewall that helps protect web applications from attacks by allowing you to configure rules that allow, block, or monitor (count) web requests based on conditions that you define.It works at the application layer (OSI Layer 7 ).
+
+What is the difference between AWS Shield and AWS WAF?
+AWS WAF (Web Application Firewall) provides protection on the application layer and AWS Shield protects the infrastructure layers of the OSI model.
+
+
+What is RDS & what are types of SQl & NOSQL database ?
+Relational Database Service offered by AWS which means SQL (Stuctured Query language) in which data is arranged in a proper structured column format Eg. Postgress , MySQL 
+NOSQL Database --> Here the type of data used is unstructred and in the form of Key Value format. It is now commonl used in todays time. Eg NOSQL ,Dynamodb ,MongoDB. More Scalable than SQL .
+
+
+How you can secure your data data encrption?
+SSl :
+AWS KMS : 
+
+What is Server side encryption & Client side encryption?
+
+
+===========================================================IAM (Identity Acces Management)
+What is IAM in AWS?
+AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. With IAM, you can centrally manage permissions that control which AWS resources users can access. You use IAM to control who is authenticated (signed in) and authorized (has permissions) to use resources.
+
+What is a role in IAM?
+An IAM role is an identity within your AWS account that has specific permissions. It is similar to an IAM user, but is not associated with a specific person. You can temporarily assume an IAM role in the AWS Management Console by switching roles.
+IAM roles are of 4 types, primarily differentiated by who or what can assume the role:
+
+Service Role
+Service-Linked Role
+Role for Cross-Account Access
+Role for Identity Provider Access
+
+USe case of ROles:
+1.CI/CD services on AWS , integrate jenkins with aws which is running outside , When we want to give permissions to resource in Terraform , or to interact with other aws accounts or services running on outside aws account.
+https://www.qloudx.com/aws-iam-roles-types-use-cases/
+
+Policy in IAM for Admin Acces in JSON format: ALL Acces
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "*",
+            "Resource": "*"
+        }
+    ]
+}
+=====================================================================================IAM Ends======================================================
+==============================================AWS EC2=================================================================================================
+Key Value pair : It is a combination of public private keys which a user use to login to a specific instance. Instance will have public key and user have private key & using that private key user will login to the instance. 
+EC2 -->Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides secure, resizable compute capacity in the cloud. Managementof these VM is totally managed by Ec2 like Timely Upadtes ,Security Issues and gives facility of pay as you go.
+What are the AWS EC2 Instance Types?
+The AWS EC2 Instance Types are as follows:
+
+General Purpose Instances - For normal day to day pupose we use General pupose  Instance.If high-performance CPUs are not required for your applications, you can go for general-purpose instances.
+Compute Optimized Instances-Machine learning -Compute-optimized instances are appropriate for applications that require a lot of computation and help from high-performance CPUs. You may employ compute-optimized instances for workloads including web, application, and gaming servers just like general-purpose instances
+Memory-Optimized Instances-Processes that do not need a large quantity of data yet require speedy and real-time processing. Eg Big Data Processing:	
+Storage Optimized Instances-Storage-optimized instances are made for workloads that demand fast, sequential read and write access to huge datasets. 
+Accelerated Computing Instances-Coprocessors are used in accelerated computing instances to execute specific operations more effectively than software running on CPUs. Floating-point numeric computations, graphics processing, and data pattern matching are examples of these functions. 
+
+
+What is AWS Spot instance?
+Amazon EC2 Spot Instances let you take advantage of unused EC2 capacity in the AWS cloud. Spot Instances are available at up to a 90% discount compared to On-Demand prices. You can use Spot Instances for various stateless, fault-tolerant, or flexible applications such as big data, containerized workloads, CI/CD, web servers, high-performance computing (HPC), and test & development workloads.
+==============================================AWS EC2 ends=================================================================================================
+
+================================================================================================================================================================
+**************************************************VPC -Virtual Private CLoud*************************************************************
+Very Important : Difference between Security group & NACL ?
+ Main difference is that SG it controls both inbound & Outbound traffic at instancelevel & NACL at Subnet level .
+SG : We can set only allow rules where as in NACL we can allow or deny the traffic.
+SG is statefull & NACL is Stateless 
+Security groups are stateful. This means that a security group only evaluates the packet from the source IP, not the destination. i.e. any changes applied to an incoming rule will be automatically applied to the outgoing rule.
+e.g. If you allow an incoming port 80, the outgoing port 80 will be automatically opened.
+
+Network ACLs are stateless. This means that every packet that passes through the resource the ACL is applied to is evaluated. i.e. means any changes applied to an incoming rule will not be applied to the outgoing rule.
+e.g. If you allow an incoming port 80, you would also need to apply the rule for outgoing traffic.
+
+
+Question: In a region we can create 5 VPC & 200 subnet we can create in 1 VPC.
+			We can take 5Elastic Ip in a AWS account.
+B default these 3 thing will get created when we create a VPC.
+1. DHCP   	2.NACL	3.Security group       by same name .
+
+A subnet cannot be create into two Availabilty zones 
+A VPC can't be created in two or more Regions.
+
+How does a Application in PVT subnet will access internet from Private subnet ?
+If a resource(Application) running in Private subnet want to access internet then we will use the Nat gateway created in bublic subnet , NAT gateway masks the IP of Resource and securely allow the resource to get internet access. Nat gateway will convert the private IP of application with Public IP of Nat gateway & send the request on internet , by this Application's IP address is Hidden from Hacker or any false website .
+
+Question:How Many EC2 Instances Can Be Used Within Amazon VPC?
+As for the EC2 instances, the default limit is 20 instances per region per account & a maximum VPC size of /16 (65,536 IPs)
+
+We can't change the CIDR block once created 10.0.0.0/16 , if we want to extend the range of CIDR we can create secondary CIDR 
+VPC : Amazon Virtual Private Cloud (Amazon VPC), you can launch AWS resources in a logically isolated virtual network that you've defined.
+In AWS the VPC cosists of the following components:-
+
+Route Table: In AWS Virtual Private Cloud, route Tables are the set of rules, that are used to determine where the network traffic has to be directed. The route table specifies the destination (IP address) and target (where do want to send the traffic to that destination). 
+
+Subnet: A segment of a VPC’s where you can place groups to isolated resources.
+
+Internet Gateway: VPC side of a connection to utilize public Internet.
+
+NAT Gateway: A highly available, managed Network Address Translation (NAT) service for your resources in a private subnet to access the Internet.
+				Nat gateway is always created in Public subnet and used by private subnet .
+
+Network Access Control Lists (NACL): an optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more subnets. You might set up network ACLs with rules similar to your security groups in order to add an additional layer of security to your VPC. The default network ACL is configured to allow all traffic to flow in and out of the subnets to which it is associated.
+VPC Endpoints: Enables private connectivity for your service in AWS without using an Internet Gateway, VPN, Network Address Translation (NAT) devices, or firewall proxies.
+Virtual Private Gateway: A virtual private gateway is the VPN concentrator on the Amazon side of the VPN connection.
+Egress-only Internet Gateway: A stateful gateway that provides egress only access for IPv6 traffic from the VPC to the Internet.
+
+VPC Peering: A VPC peering connection allows you to route traffic between two Virtual Private Cloud’s using IPv4 or IPv6 private addresses. Instances in either VPC can communicate with each other as if they are within the same network. You can create a VPC peering connection between your own VPCs, or with a VPC in another AWS account. A VPC peering connection helps you to facilitate the transfer of data
+
+VPC Endpoints: VPC endpoints allow private connection between your AWS VPC and other AWS services without using the internet. VPC endpoint devices are scaled, redundant, and highly available VPC components. There are two types of AWS Virtual Private Cloud endpoints Interface endpoints and Gateway Endpoints.
+
+What is VPC flow logs?
+VPC Flow Logs records a sample of network flows sent from and received by VM instances, including instances used as GKE nodes. These logs can be used for network monitoring, forensics, real-time security analysis, and expense optimization.
+================================================================================================================================================================
