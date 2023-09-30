@@ -1,0 +1,1126 @@
+https://907592850687.signin.aws.amazon.com/console
+=========================
+Access key= AKIA5GUF73T75EYXKLMX
+Secret access key=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
+============================================
+Accessing someones hardware virtualli is Virtualization.
+Accessing someones Virtal machine with help of internet is Virtual machine.
+
+Keys:
+ssh-keygen
+
+/root/.ssh/id_rsa-At this location key are generated.
+id_rsa.pub= means public key
+
+id_rsa=means private key(also mentioned inside file)
+Fingerprint encryption.
+Switch user cmnd:  su ravindra 
+ 
+Go to root user & run : passwd username , to reset the password /
+-----------Aws-----18jul ---------------------
+AWS:Check the latency on "cloudping.info " on chrome. 
+GCP-Check the latency on "pingtestlive.com " on chrome.
+Azure-Check the latency on "cloudpingtest.com " on chrome.
+
+Latency -higher response from data center lesser latency.
+We choose less latency data center for fast response
+
+Amazon Machine Images (AMI)
+AMI:It is an OS in which amazon has installed some softwareor which amazon has modified as per own requirement ,pre-installed package and named as AMI
+or 
+Customized OS by the Amazon.
+We can create instances with AMI .Eg. [OS +PYTHON + ms office + putty ] & make a image in VM Instance  of all these and directly provide to anyone or use yourself without installing same softwares everytime.
+[OS +PYTHON + ms office + putty ]=AMI
+
+After creating image go In AMI option --> Launch instance , while selecting OS use your customized AMI .By this way we can use AMI . 
+=========================
+Load Balancer-In EC2 feature = Distributing the traffic equally
+So that one particular server dosen't go down by huge traffic.
+
+ELB not go down its amazon managed service.
+For EC2 VM we manage that dont have to go down. We will you horizontal scalling & load balancer
+
+Inside Networking option while creating instance in AWS:
+0.0.0.0/0 - Internet Ip anyone can share the traffic .
+/0 = subnet whichindicates more than 4crore ip  can be used to communicate
+  
+S3 has 5tb storage capacit for our personal AWS account which gets updated as we put 5gb data .
+
+EBS-Elasic block storage Performance is good with ssd option gor best performance.
+
+IAM :Identity Access management .
+  IAM have 2 things:
+  1. Identity 
+     user | Groups|Roles| Credentials
+   
+  2.Permission
+     Policy  | Statements
+What policy permission are required to identity that permissions will be provided to them with permission .
+
+907592850687
+
+While creating the Key in AWS :
+.pem -For Windows
+.ppk - For Linux 
+
+-------------
+RDP(Externeal software)- for Windows Connection (In windows port used is 3389 & 3306 )
+Putty((Externeal software)) -For Linux connection (port 22 fixed to use ssh )
+------
+Practical 1
+
+Remote desktop Open on your laptop:
+Administrator
+13.233.200.100 ----> IP of aws vm we created 
+passwd=RwM0ZiL?FvuevTiP*ug3DO!kqdQBKmh2
+
+Windows 2022 server which is hosted on AWS
+
+With the help of Public IP written above we are able to logged in otherwise not .
+
+==========================
+Practical -2 EC2 Config Apace/nginx web server in Linux machine
+================= =======
+Purpose of this practical is Web Server Creation . A website that is running in this IP.
+1  65.0.89.221 Copy AWS public ip
+2. open Moba
+3.Go to session & choose ssh then put IP in hostname 
+4.Click on advance Option & prevate key Upload ke that you saved while creating AWS key pair.
+5.[ec2-user@ip-172-31-36-147 ~]$ --IP here is Private IP.
+
+Check for security related thing & nginx is running or not with below configs: 
+status nginx - to check status.
+systemctl start nginx  - No output means its running 
+
+For security issue :
+got to vm & click on instance id and go to securit option 
+Click on security groups 
+
+As web application run on 80 port so edit this.
+Got to edit inbound rules then add rules adn add 80  in protocol & 0.0.0.0/0
+Then again go to the IP on web browser & check.Now it works.
+
+Inound rules means from internet to EC2 machine & Outbound means EC2 to internet.
+===================================================================================================================
+IPv4 :addresses are 32-bit integers that have to be expressed in Decimal Notation. It is represented by 4 numbers separated by dots in the range of 0-255.
+IPv6 :IPv6 Address Format is a 128-bit IP Address, which is written in a group of 8 hexadecimal numbers separated by colon (:).
+====================================================
+65.1.111.174 - Public ip
+172.31.1.208 -Private IPv4 addresses
+
+-------after reboot & stop again start instance Public IP changes & nginx running on previous IP is no more running ------
+65.2.78.37-Public IPv4 address
+When VM is restart or stopped and restart VM then Public IP changes :
+
+To overcome this problem we use the Elasic IP , we can purchase this IP so that if the VM restarts or stop the application running on this if dosen't go down.
+
+Elastic IP address: 35.154.186.14
+For that search Elastic ip in AWS in features you will find . Click on allocate Elastic & allocate .
+Now allocate this Elastic Ip to the existing IPV4 ip .
+Click on Elasic Ip  click Associate Elastic IP  Instace choose our current instance.
+Now you can restart your vm many times but it will not change the IP .
+
+sudo -i
+yum update 
+yum install nginx
+systemctl status nginx
+systemctl start nginx
+systemctl status nginx
+cd /usr/share/nginx/html
+echo "Shubham Practice 101" > index.html
+echo "Shubham Practice 202" > index.html
+echo "Shubham Practice 303" > index.html
+
+
+
+If you want to change the Screen content which comes when we use the ElasticIP
+gp to cd /usr/share/nginx/html
+ls
+index.html -nginx home page file if any web server is there which is running the dtaa is coming ffrom index.html file .
+open & do change as per your need.
+
+=======================================================================
+Autoscaling:
+Manging the environment automatically as per the utilization of the resource in or order to save the resource and money for user & organization.
+If low use then reduce the server or resource.
+If High use then increase the server automatically.
+We can set the Autoscaling in Instances b enbling and setting the limit. 
+Cooling period= 
+HIgh Availability: Means running your service in atleast 2 data center so as to survive data loss issue .
+=======================================================================
+(ELB)Loadbalancer: Distribute te traffic among VM insances
+Managed b AWS , we only need to configure.
+
+Distribution of Traffic via loadbalancer  can be based upon :
+1. Ration based: We can define how much traffic to be send to which POD or Machine.
+2. Sticky Session: If one request of any user goes to a pod that requests from this user will only stick to that pod.
+3. Path Based:
+4. Whitelisting: Only allow specific customer to Access the application.
+5. Blacklisting: Blocking the user from particular IP .
+
+ELB+DNS(automatically generated)
+Creating Loadbalancer:
+Go to Loadbalancer 
+do the configs as required attach the Instances & create a loadbalancer 
+DNS :http://shubhamloadbalancer-219213126.ap-south-1.elb.amazonaws.com/
+
+
+EBS (Elastic block storage )- EBS is used to put the OS related & database ou have to keep here.
+===============================================================
+IAM S3  are global service .Particular data center couldn't be choosen.
+EC2 -Particular data center we can choose.
+
+Snapshot is used to take backup of Volume .
+
+Create VM with EC2 then install python 
+
+Security - Its instance firewaly , we restrict traffic from security group .
+
+Private IP -Inside same VPC machine can communicate with other VM though Private IP.
+
+================================S3 topic ================================
+We search S3 bucket , create a bucket .Its Globals service.We can choose region 
+https://s3.console.aws.amazon.com/s3/buckets/shubhams3bucket?region=ap-south-1&tab=objects
+
+It's like google drive , we can upload data worldwide and share it via url . 
+100 S3 bucket can be crated with AWS.
+Name of S3 bucket can't change once name given .
+static url 
+http://staticshubhams3resume.s3-website.ap-south-1.amazonaws.com
+What is S3 ?
+Public cloud & its globall accessible  Amazon S3 (Simple Storage Service) is a
+- Scalable
+Highly available
+Secure and
+Cost effective
+Cloud storage service provided by Amazon Web Services (AWS).It allows you to store and retrieve any amount of data from anywhere on the web.
+ The content is globally accessible but s3 bucke is created in a AWS region which is near or any.
+We can store upto 5TB and then we can upgrade by writing to support team.
+=======
+Scalability
+Store ALMOST unlimited data in a single bucket. However one object should notmore than 5 TB.
+Tip:
+Choose multipart uploads to upload an object if the size of the object is huge.
+=====
+Security
+S3 provides bucket policies, access control, and encryption settings are appropriatelyconfigured.
+Encrypt data at rest using server-side encryption options provided by S3. Additionally,enable encryption in transit by using SSIJTLS for data transfers.
+Enable access logging to capture detailed records of requests made to your S3 bucket.
+Monitor access logs and configure alerts to detect any suspicious activities or unauthorized access attempts.\
+S3 provides features and configurations to assist with compliance requirements, such as enabling Object Lock for data immutability, managing legal holds, and integrating with AWS CloudTrail for audit trails.
+=======
+What can you store in these S3 ?
+S3 service allows you to create buckets in which you can store anything. Like Photos , vdo, files, folder , excel ,software etc.
+But we deal with application logs files ,user huge data base , backup , excel for dashboard , configuraation files. 
+S3 bucket :Database dumps , logs , Csv files , continuous basckup , dashboard , chart will be stored in S3.
+
+If the data is imp aws will keep the data in 3 different zone 
+Hot Data:Data which is accessed frequently.
+Cold data:Data which is infrequently accessed .
+S3 Storage Class:
+1.Standard: Data which is used frewuentl within days. Eg. Data of current batch
+2.Intelligent tiering: Data which you use randomly any time . If you dont use much it will transfer data to other storage depending on use .(Miscellaneous data )
+3.Infrequent access: Dont use daily but is important may need to use infrequently. Eg data of batch 27 ,28 .
+4.One Zone : Not imp data is kept in this zone ( Kept in only one data center )
+5.Glacier : Some data after one year you want will be in this zone.
+6.Deep Archive:more than 2-3year data is kept here.
+
+
+Deep archive : take a lot of time hrs or days & price is low as compared to Standard. More old the data more high time to search .
+Standard: It take high price & search of data is in seconds.
+
+docker run -ti -d -p 80:80 -v /root/car-repair-html-template:/usr/share/nginx/html nginx
+============================================================================================================
+DATABASE
+============================================================================================================
+Database :=electronically arrangement of data is know as database which we can manage with the helpof of application or software.
+Database type:
+1 Relational: Which are structured,unique in proper row column.Eg MySQL,Oracle
+2. Non-relational db:Unstructured & Dont use tabular row,column format . Eg MongoDB,CassandraDB, OracleNoSQL,CouchDB.
+SQL:Structured query language
+A tuple, also known as a record or row, is a  basic unit of data in a relational database management system (DBMS)
+A Relation is SQL means Table
+A Attribute in SQL means a Column.
+
+OLD Approach :EC2+DB 
+
+What is OS patching? 
+Security patches , yum update commands we do the OS patching .
+
+DB software installion?
+yum install mysql/oracle will do SW instalation. 
+
+updating the version is patching.
+
+AMAZON RDS (Managed Relational database service)
+
+postgres
+MD72gGyW1nXk9ydhtwhk
+
+How to take the backup manually with CLI ?
+Ans: pg_dump dbname > outfile
+     mysql dbname > filename
+
+
+==========================================
+VPC -Virtual Private CLoud
+=============================
+Its a private network which you can develop its a isolated network which we define as per our requirement .Secure as per your requirement.
+AWS gives one VPC but you want to secure your resource more than create your own VPC as per your requirement.
+
+We put the services into the VPC for secure purpose for  own or for your organization.
+
+CIDR-Classless Inter-Domain Routing (CIDR) is an IP address allocation method that improves data routing efficiency on the internet. Every machine, server, and end-user device that connects to the internet has a unique number, called an IP address, associated with it.
+https://aws.amazon.com/what-is/cidr/#:~:text=Classless%20Inter%2DDomain%20Routing%20(CIDR,IP%20address%2C%20associated%20with%20it.  Read from here .
+
+Calculate 10.0.0.0/16
+Range is 0-32 for CIDR.
+16 came b this formula:
+  =32-16=16
+  2^16=65536
+65536 IP can be there inside your VPC if you use /16.
+for 1 IP to allow use 32 
+for 16 IP to allow use 28.
+
+Internet Gateway: Attach the IG to the VPC to enble comm. b/w resurces in our VPC & the internet.
+Subnet -Logical suppression of IP address.
+Route Table: :list of ip allowed 
+
+What is egress-only Internet gateway?
+An egress-only internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows outbound communication over IPv6 from instances in your VPC to the internet
+10.0.0.0/16- range of IP's.(65536)
+
+
+Practical -8
+1.Create a VPC with more configs subnet , DNS 
+2. Create a Ec2 with network setting as created in VPC and associate them .
+3. Create NACL(Network COntrol Access list) for network securit purpose so that attacker can't come in.& set block the IP (32.32.43.23/0)  deny .
+    set rule for IP which are allowed so that people you want them to access the IP can use via VPN.
+
+
+============================
+Practical-7
+1.Create EC-2 with kep pair Batch30Linuxkey as we want to use it
+2.then create a RDS with 1. Standard 2.ubuntu 3.Connectivity -Choose EC2 Practical-6SQLproxy(VM) and click create . 
+RDS & EC2 are connected with wach other as per our configs.
+3.Open Mobaxterm and go to sessions and copy public IP of VM to Hosts 43.205.145.112  & advance setting Click on Use Private keys and upload the ppm key that you have on your laptop.
+
+Login in mobaxterm : ubuntu (Not ec2-user) 
+sudo apt update 
+sudo apt upgrade 
+sudo apt install mysql-client   (mysql-client(software name ) willinstall as mysql is needed to run queries)
+mysql (will throw some error because myclient server is not installed so we will get the endpoint address "database-1pr6.ca0nqozczive.ap-south-1.rds.amazonaws.com" of RDS in Connectivity & security  )
+Connect with endpoint with this command:
+mysql -h <endpoint> -u admin -p 
+mysql -h database-1pr6.ca0nqozczive.ap-south-1.rds.amazonaws.com -u admin -pReF7b274EH9uXRKKAGGAC (got some issue )
+mysql>    (This promt should come).
+
+
+MYSQL Commands:
+SHOW DATABASE
+create database firstdb;        ----> Create a db 
+
+
+
+Master username
+admin
+Master password
+ReF7b274EH9uXRKKAGGAC
+
+==========================================
+Amazon SNS(Simple Notification service)- 
+Topic - Body of the msg
+Subscription - Who will recieve the notification  that   person mail id 
+
+
+==========================
+Git & Git hub Start:
+Cloud to cloud copy of any repo is called Fork . means any repo can be copied to your github account b using fork command on that repo ehich ou need to copy.
+
+To download the code from github to your local machine we use clone command "https://github.com/ShubhamKryadav/vlc.git".
+
+Git is a Version control system .
+git config --global user.name "ShubhamYadav"
+git config --global user.email "shubham029yadav@gmail.com"
+
+
+Java JDK used 
+
+=======================================
+Jenkins:A CI server which manages and conrol processes such as plan,code build test deploy operate and monitor in DevOps evnvironment.
+==================================
+Jenkins: Jenkins is an open source continuous integration/continuous delivery and deployment (CI/CD) automation software DevOps tool written in the Java programming language. It is used to implement CI/CD workflows, called pipelines.
+or
+Jenkins is an open source automation server. It helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration and continuous delivery.
+
+How to restrict a new user of Jenkins ?
+We can go to Manage Jenkins 
+
+We need to Install a plugin known as Role-based Authorization Strategy 
+Goto Manage Jenkins -->Security -->Authorization-->Change it to Project based Matrix Authorization Strategy. Add users and choose what access you want to give to user.
+Second way :
+Goto Manage Jenkins -->Manage & Assign Roles -->Manage Roles --> Add a role , patterns(Dev*) & save
+Goto Manage Jenkins -->Manage & Assign Roles -->Assign Roles -->Global .
+
+--------------------------
+CI-When 3 develover pushed the code to the Centralized location (Github) & after that Continuous integration wil happend Build + Test + Compilation and whatever result is there of integration shared with the team . 
+
+
+CI- It is the practice of running your build and tests automatically ever time when someone pushes new code into the source repository(Github)
+Unit test : The test that developer do for the checking of any code .Logic test is tested in this test .
+
+Building: We use the build for large program or project .Build tools is used for build . Build is a process that covers all the steps required to create a deliverable of your software . Eg maven tool for java , pythin dont need building tool.
+difference 
+Compile: 
+
+======================================
+Container- Container is a std unit that packages up the code and all its dependencies so that the application runs quickly & reliabl from one computing environment  to another.
+
+Containerization-If any application packed in a container with its binary & libraries that process is call Containerization. To achieve this containerization process is all called containerd.
+
+Componenets inside container are as follows:
+1.Code
+2.Libraries
+3.Package manager
+4.Apps
+5.Data
+=====================================================DOCKER============================================
+Docker:DOcker is a tool designed to create , deploy & run application with ease by using conainers.It ensures your application works seamlessly in any environment be it Deveplopment , Test, Production.
+
+docker inspect:In docker to IP address of container .
+Docker is a container deveploment service .They keyword of docker are develop ,ship & run.
+     
+Docker is a tool used by developers,ssadmins,DevOps etc to easily deploy their application in a sandbox called containers to run on the host OS i.i Linux.
+
+Whole idea of DOCKER is for developers to easily develop applications, ship them into comtainer which can then be deployed anywhere.
+	 
+Container is a runtime instance of a docker image.
+
+Docker container consistes of :
+1.Docker image
+2.An execution environment
+3.A set of instructions
+
+Node: is a fundamental requirement to run an application. It is a physical or VM , it can be installed or created by cloud operating systems like AMAZON EC2.
+Node can also be derived as a set of machines/instances(VM) , where required tools installed.
+
+Docker File : It is a text document tha contains all the commands .Run set of commands on Command Line to asseble an image.Docker can build images automatically by reading the instructions from a docker file.
+It tells instructions as code of how your image is put together & what dependencies it requires.
+
+We make the build by doing our code and then push to central repository then we can pull it and download and create a image of the docker file we created so as to run that services ,application .
+
+How to monitor docker containers ?
+There are several ways to monitor Docker containers in real time:
+docker logs : View the logs of a running container.
+docker attach : Attach to a running container and view its output.
+docker top : View the running processes of a container.
+docker stats:Every running container can be analyzed using this tool to determine its CPU, memory, network, and disk utilization.S3
+docker stats:Every running container can be analyzed using this tool to determine its CPU, memory, network, and disk utilization.
+================================KUBERNETES====================================================
+Kubernetes Cluster Architecture
+A Kubernetes cluster includes a cluster master node and one or more worker nodes.
+These are referred to as the master and nodes, respectively.
+The master node manages the cluster.
+Cluster services, such as the Kubernetes API server, resource controllers, and schedulers, run
+on the master.
+The Kubernetes API Server is the coordinator for all communications to the cluster.
+The master determines what containers and workloads are run on each node.
+When a Kubernetes cluster is created from either Google Cloud Console or a command line, a
+number of nodes are created as well. These are Compute Engine VMS
+========
+What is kubernetes?
+Kubernetes is an Open-source system for automating deployment,scalling & management of container-application.
+
+Many cloud services offer kubernetes-based platform or infrastructure as a service .(PAAS or IAAS) on which kubernetescan be deployed as platform-providing service .Some example are :
+
+AWS EKS - (Managed Elastoc KUBERNETES Service )
+AKS- Azure KUBERNETES Service
+GCP GKE- Google Kubernetes Engine.
+
+KUBERNETES CLUSTER: It is made of following components.
+1.Master:
+Kube API Server 
+Control Plane (Kube-scheduler + Kube-Controller-manager + Cloud Controller)
+Etcd
+
+2. Node:
+Kubelet
+Kube-proxy
+Container Runtime
+
+3.Addons:
+DNS
+WEBUI
+Contaienr resurce monitoring.
+Cluster Level Logging
+
+Node in Kubernetes cluster is the main worker machine , also know as minions.
+Node provides all necesary services to run PODS.
+Node in Kubernetes systemis managed by the master.
+
+Helm is a tool that automates the creation, packaging, configuration, and deployment of Kubernetes applications by combining your configuration files into a single reusable package. 
+
+Why do we use Helm?
+What is Helm in Kubernetes? – Sysdig
+The objective of Helm as package manager is to make an easy and automated management (install, update, or uninstall) of packages for Kubernetes applications, and deploy them with just a few commands.
+
+What is a Helm chart?
+A Helm chart is a set of YAML manifests and templates that describes Kubernetes resources (Deployments, Secrets, CRDs, etc.) and defined configurations needed for the Kubernetes application, and is also easy to deploy in a Kubernetes cluster or in a single node with just one command.
+
+Container Orchestration:KUBERNETES runs on a cluster of VM. It determines where to run containers, monitors the health of containers & manages the full lifecycle of VM instance. This collection is knowm as conainer Orchestration.
+
+Essential Componenets that run & maintain your cluster are:
+1.Kubernetes Master: Kubernetes Master is normally a separte server responsible for maintaining the desired state of cluster . It dose this by telling nodes hwo many instances of your application it should run 
+2.
+3.
+
+How Container communicate inside a POD?
+Ans: They Communicate using localhost . Cluster IP is generated for the POD , Kube-proxy generates the Cluster IP.
+
+Benifit of having mukti container in a POD?
+Ans: they , means Container A & container B can share same  network,storage etc. They can share the files beteween them if required easily .
+
+What is the main difference between POD & Container ?
+Ans: In containere me have to define and specify port , network , volume in CLI While in POD ever configuration is done with the yaml file.
+
+How to get the advance features like Autohealing & Autoscaling in kubernetes ?
+Ans: When we deploy our application these feature will also come along . POD Don't have these feature thats's why we use deploment.
+    
+
+How to debug a issue in POD and what are the basic commands for it?
+Ans: kubectl logs podname & kubectl describe  pod "podname"(nginx)
+
+Why do we need Deployment when we can deploy the applications with POD?
+Ans:We can create zero down time application using  deployment 
+2. IN deployment it uses replicaset which ensures the no. of PODS that is provided in manifest.yaml file , if anyone kills any POD it will create another one in notime because we have defined the no of Replicaset for POD to be available inside a cluster.
+
+If we deploy a application it will automatically create a pod because in Deployment.yaml file we have mentioned the replicas which should be available.
+
+ kubectl delete po nginx-deployment-cbdccf466-5p4dl
+kubectl get pod -w  (watch the process process followed )
+
+KUBERNETES Services:
+Loadbalacing:
+Whenver a POD goes down and a new POD comes up then the IP is also changes when POD comes , Autohealing is  occuring but if we share the IP to internal team then there will be conflict because IP is change . 
+To resolve this issue we create service on top of deployment which acts as a Loadbalancer(service ) it uses a component in kubernetes whcih is kube-proxy.
+
+2.Service Discover - USes Labele & selector  so that the application not affect whether Replicas is increased or new pod created no affect nomatter how many times IP changes now.
+
+3.Expose:Exposing the applicationto the world.
+ Cluster IP- Inside the Cluster 
+ NodePort IP- anybody inside the organization , who has access to ypur node IP can see the application.
+ Loadbalancer IP.- Externally user can acces with the help of LB IP external IP.
+ Question 4
+What is the difference between
+Docker container and a
+Kubernetes pod ?A pod in kubernetes is a runtime specification of a container in docker. A pod provides more declarative way of defining using YAML and you can run more than one container in a pod.
+
+Kubernetes Ingress:Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the Ingress resource. Ingress may provide load balancing, SSL termination and name-based virtual hosting.
+(In Service below mentioned feature were missing)
+Without Ingress it's not possible to provide the some features like loadbalancing based on requirement like ratio based , path based , sticky session, domain based etc.Enterprise level capabilities  were missing in Kubernetes Services so in order to resolve this issue Ingress comes to place.
+Also without ingress service static IP can't be shared in Loadbalancer , In kubernetes Loadbalancer dont have one static IP for all the microservices insted it provide Dynamic IP address  which is not fruitfull and costs more if we take Elastic IP address for all Services that Client wants.
+
+If we want to create a Service of Type Ingress the you need :
+ Ingres Resource- We give condition & actions in yaml file
+ Ingress controller (Like nginx -nginx yaml which install ingress controller ) , I.C simply means Loadbalancer & Api Gateway.
+                  This resolves enterprise level issue faced by customer .
+
+We can create a ingress.yaml file with ingress resource & we need to install the ingress controller through web after that address IP will be shown.
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.3/deploy/static/provider/baremetal/deploy.yaml
+
+
+kubectl get ingress
+
+/etc/hosts -  we can update the host name an d IP here . Eg: "IP provided by ingress controller" "website name"  || 192.334.334.223 foo.bar.com.
+ 
+ How to Make your apllication ssl certified steps:?
+Step 1: Install a Cert manager.
+1. install cert manager : kubectl apply -f https://github.com/jetstacWcert-manager/releases/download/v1.7.1/cert-manager.yaml 
+2. kubectl get all -n cert-manager
+
+Step 2:Creating Issuer Issuers, and Clusterlssuers, are Kubemetes resources that represent certificate authorities (CAs) that are able to generate signe certificates . 
+1. Create a staging_issuer.yml   (kubectl get clusterissuer)
+2. 
+ 
+ Step 3:Updating Ingress Resource
+1. Goto  ingress resource.yaml file and add the annotation in meta data & tls in specs after creating the issuer cert for hosts.
+ 
+Step 4:Creating Production Issuer.
+1.Create a prod_user.yaml and 
+2.1. Goto  ingress resource.yaml file and again update the prod issuer certificate detail. ONly change in annotation , cluster_issuer : prod
+annotations :
+	cert-manager.io/cluster-issuer: "letsencrypt-prod"   (only change in name )
+	kubernetes.io/ingress.class : " nginx "
+3. Apply the changes with "kubectl apply -f ingress-resource.yaml"
+
+(We did this to achieve a secure application , https )
+kubectl get certificate   --> certificate generated by clusrer_issuer
+kubectl cluster-info
+
+
+To use HTTPS with your domain name, you need a SSL or TLS certificate installed on your website. 
+what is a ssl certificate used for?
+An SSL certificate is a digital certificate that authenticates a website's identity and enables an encrypted connection. SSL stands for Secure Sockets Layer, a security protocol that creates an encrypted link between a web server and a web browser.
+
+GlobalSign ,Godaddy etc provide the SSL certificates their clients.
+ https://www.youtube.com/watch?v=pcADx8JFUIA&list=PLY63ZQr2Y5BHkJJhwPjJuJ41CIyv3m7Ru&index=26===================================================================================================================
+ 
+********************Configmap in KUBERNETES?**********************************
+What is a ConfigMap used for?
+A ConfigMap is an API object used to store non-confidential data in key-value pairs. Kubernetes pods can use ConfigMaps as configuration files, environment variables or command-line arguments. Config map solving the problem of storing the information which can be used by the application at latter point of time.
+How we can achieve the configmap ?
+We have to create a configmap which will store the data & information in the form of environment variables,volume mounts and then mount it inside the PODS. 
+
+Details in DB should not be hardcoded because hacker can retrieve the data, by that the can get access to database and then can do illegal things and the application will get compromised . Also if the password is changed then the user will get null output. SO we will store data as environment variables , path  ,configuration files in a volume.
+1.If a hacker gets access to KUBERNETES CLUSTER Then he can see the config map details by running kubectl describe configmap , kubectl edit config map etc and can get sensitive information if stored inside configmap.
+2. he can get inside etcd and the data is not encypt then he can misuse the sensitive information.
+AS kubernetes uses container , so we will use config map and store information like DB port ,etc and we can mount the information in configmap inside PODS .
+The information can be stored inside the POD as a Enviroment variable , or as a file on container file system .  
+
+
+Where is ConfigMap stored in Kubernetes?
+Where Are Kubernetes ConfigMaps Stored? Kubernetes stores API objects like ConfigMaps and Secrets within the etcd cluster.Etcd is essentially the brain of Kubernetes, since it stores all of the key-value objects that Kubernetes requires to orchestrate the containers.
+ 
+What is etcd in Kubernetes?
+etcd is an open source distributed key-value store used to hold and manage the critical information that distributed systems need to keep running.
+etcd data is stored in folder /var/lib/etcd  
+docker commit <container id > <new image name >
+In above commands we are creating images from Container which is alread present .In general from image we create a container.
+
+Create a Configmap yaml file --> Go to Deployment.yaml of POD --> create env variable add below env. But by this approach when we update the db port in configmap file it doesn't get update automatically in POD (Deployment.yaml). 
+Better approach is by creating Volumes in Deployment.yaml & Mount it with configmap. It automatically updates the value without restarting the Deploment or POD .No downtime or incurr happens .
+
+env:
+ — name:
+ valueFrom:
+   configMapKey:
+   name:test—cm
+   Key:db-port
+---------------------
+spec :
+containers :
+- name: python-app
+image: abhishekf5/python-sampIe-app-demo
+volumeMounts :
+- name: db-connection
+1
+mountPath: /opt:
+ports :
+- containerPort: 8ØØØ
+vol umes :
+- name: db-connection
+configMap :
+=================================================*********Secret in KUBERNETES?**********************************===========================================================
+============================================================================================================================================
+what is secrets in kubernetes?
+Secrets can be defined as Kubernetes objects used to store sensitive data such as user name and passwords with encryption. There are multiple ways of creating secrets in Kubernetes. Creating from txt files. Creating from yaml file.If you put an kind of data in secrets .So Before the obeject is saved in etcd kuberentes will encrypt the data also kubernetes secret allows user to custom encrypt and pass this value to the API server and say wheneever API server is feeding som data to etcd you can use the custom encrption .
+Also if hacker tries to hack the etcd and custom encrypt is used he can't get access to it as he don't have the decryption key .Hacker could get ino config map and read details and POD details 
+Secrets are objects that store sensitive information, such as passwords, API keys, OAuth tokens, and Secure Shell (SSH) keys.
+
+1.If a hacker gets access to KUBERNETES CLUSTER Then he can see the secret details by running kubectl describe configmap , kubectl edit secret, etc and can get sensitive information if stored inside secret also but we use RBAC to control the access of any user.We can give least privillege to any person who can see the kubernetes cluster information .
+We can prevent any one accessing the secret by resticting their access in RBAC.
+
+kubectl exec -it sample-python-app-7b7fd5fd78-6rtbq /bin/bash
+
+Command to create a secret:
+kubectl create secret generic test-secretl-- from-literal=db-password="abhi "
+
+kubectl create secret generic test-secretl-- from-literal=db-port="3306"
+
+kubectl describe secret test-secret
+kubectl edit secret test-secret
+kubectl describe cm test-cm
+
+echo Mndhd== | base64 --decode    --> Decode the basic encryption provided by Kubernetes.
+
+We use Hashicorp vault for encryption in real time.
+
+What is the RBAC rule in Kubernetes?
+In Kubernetes, RBAC policies can be used to define the access rights of human users (or groups of human users). Kubernetes identifies human users as user accounts. However, RBAC policies can also govern the behavior of software resources, which Kubernetes identifies as service accounts.
+
+RBAC has authority to conrol the access of a User in a company or any service which requires acceess to any file or folder which is critical . like etcd or configmap,secrets .
+
+RBAC manages:
+1.Service Accounts/Users:
+2.Roles/Cluster Role: Its a yaml file where we can define what access user need as per his requirement . 
+3.Role binding /CRB: Bind/attach   the user to the roles(permission) is known as role binding. When the user has cluster level permission its known as cluster binding .
+
+WHen we creating role at Cluster level for all namespaces it called Cluster Role . Not into a particular namespace .
+
+User --> role --> ROle Binding 
+
+
+******************************* Monitoring in Kubernetes **********************
+Prometheus is a monitoring solution for storing time series data like metrics.monitoring and alerting functionality for cloud-native environments, including Kubernetes.
+Prometheus act as a data source for Grafana to Virtualize .
+Grafana allows to visualize the data stored in Prometheus (and other sources).
+
+For Grafana Prometheus is the data source from which it takes data and visualize in form of charts,bars and we can customize and choose the dashboard.
+
+apiserverIP/metrices --> can get status of all the resource  in KC.
+
+Time Series DB - With respect to time stamp it stores the information metrices of the your kubernetesCluster.	
+
+Kubernetes Cluster   --Fetchmetrices--->   Prometheus Server (Stores the metrices from KC in Time series DB)    ---> Grafana Prometheus web UI , Data Visual.Dashboard for monitor
+											[Alerting ]
+
+For Installation of Prometheus & Grafana we use Helm as a packet manager.
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack --namespace monitor
+kubectl expose deployment kube-prometheus-stack-grafana --port=3000 --target-port=3000 --name=grafana --type=LoadBalancer -n monitor
+-----------------------
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+helm install grafana grafana/grafana
+kubectl expose service grafana — type=NodePort — target-port=3000 — name=grafana-ext
+
+We are exposing the prometheus & grafana on to External IP using LoadBalancer . 
+We can create Dashboard for monitoring the cluster .
+We can choose state-metrices and expose it & can go to metrices and run that metrice in promethus and get query & that query we can visualize using grafana.
+
+
+kubectl edit cm "prometheus"    --(we need to edit data & update as per requirement )
+
+
+-------------------------
+Custom Resource in Kubernetes: To explore more inside Kubernetes and enhance the behaviour of kubernetes  &  aplication feature, Securit , API ,firewall and new capabilities to kubernetes.
+We can use ArgoCD, keyclock , ISTIO, . Exploring the additional capabilities API resource 
+
+CRD-Custom resource defining , defining new type of API to kubernetes b submitting CRD .yaml file define resource with extended capabilities .
+CR-
+=======================================================================================================================================================================
+docker top <containername >- to see CPU memor of an container .
+
+
+sudo apt-get update && sudo apt install docker.io -y
+docker system df
+docker image prune -s  (Clean up command to free disk usage )
+
+
+Namespace - We can share the same cluster with Devloper & QA people with the help of Namespace .
+
+COntrol Plane- Master is control plane
+
+========================
+Features of Kubernetes are :
+Self Healing :If any pod application has some issue then it can fix itself some issue at its end.
+Automated Rollbacks: If the application is not working properly on latest version than it can automatically roll back to previous version.
+AutoScaling : It can increase/decrease the size of worker or PODS as per requirement .
+Loadbalancing:
+ 
+ 
+ Kubernetes version = 1.27.3-gke.1700
+ 
+ ================KUBERNETES AUTOHEALING in ================
+ If we create a deployment and choosen the replica 3 or more in it & we try to delete it then it wont be deleted as Kubernetes has feature to autoheal , and we provided 3 replicas so for always 3 replicas will be there in 3 node. 
+ So if we want to delete the Node its not possible , we have to dleete the complete deployment from Workloads,or set replica to 1 and then delete
+
+Replicas can be managed using deployment
+
+=========================
+Statefullset:
+
+
+
+================
+Ansible:Its an Open source s/w provisioning ,Configuration managemnet & app-deployment/management/operation toolzx
+Ansible is a Configuration managemnet tool which can work without any agent.After creating an EC2 we have to do many configuration in the instance and if there is 100+ VM than it will be tough to do so on all VM . We can automate this thing with ansible .So here Ansible tool will be used to configure all the VM  .
+Ansible saves time and performs the repeated activity in less time incomparision to Manual work by any indidvidual.
+other tools also available like puppet , chef, CF engine, Saltstack etc.
+
+Ansible connects with other machines with the help of ssh(Client connects server with the help of ssh, No special agent required).
+
+Patching activity - updates the packages of the OS . Monthly/weekly activity in all companies. we run apt get update command.
+Features of Ansible :
+Simple - human readable 
+Powerful -Orchestrate the app lifecycle , Configure Management and deployment on 1000of vm 
+Agentless - Uses SSH & WinRM . No agen required. More efficient & more secure.
+
+Some Keywords in Ansible:
+Master ansible :A process on the machine that provides the server.
+Target Machine:A machine we are about to configure with ansible.
+Task: The activity or configs (install, delete etc) we want to perform in VM is written in Playbook .
+Playbook - It is a yaml file . where ansible commands are written and yml  is executed on a target machine. Task are mentioned in the yaml file
+host Inventory file - All the target IP/Instance name  are available on which the configuration is set to perform.
+
+
+Modules: Its read made functions whcih are available that we can use if required. 
+
+CMDB: All the details that we doing are saved on CMDB(database), provided by ansible.
+
+Plugins: for external connectivity , nit much requie=red ansible is enough.
+
+ANSIBLE MASTER --> PLAYBOOK --> HOST Inventory --> ==============SSH======>>>>>> TARTGET 1 , TARGET 2 , TARGET 3 ......
+
+Ansible Roles- Its like a function or module
+
+How to create Ansible roles?
+ansible-galaxy init nginxrole          here we are creating nginx install role               
+
+Node: if any software is installed into the VM then this VM is called Node . Like docker is installed in any VM so it will be called Node.
+
+==========================================TERAFORM====is free Open source=========================
+Terraform supports all CLoud provider.
+Teraform: Infrastructure development can be achieved with the terraform.
+Infrastructure can be generated with the help of code  using Terraform tool. 
+First time to set up terraform it takes time but after that it will automatically do afterwards.
+IAC- Infrastructure as a code means to manage your IT Infrastructure using configuration files(Code).
+Like we were doing everything with the help of UI to create EC2, RDS, VPC etc . In IAC we can perform this with the help of code .
+
+Other tool - Cloudformation (AWS) Its available if we are only using AWS  for Cloud activities.
+
+For Hybrid cloud we use - Terraform as we are using GCP & AWS also sometimes.
+
+If we are using only Google cloud for cloud activities - Terraform is the option .
+
+If we are using only Azure for cloud activities - ARM templates is the option .
+
+Terraform commands:
+Terraform init    -It will start reading the tf file and observe and get ready that this work needs to be done.
+Terraform plan  - Whether the code written is achievable or not. If avhievable it will tell its ok or not.
+Terraform apply  - As we run this it will get execute and infrastructureis being created.
+Terraform destroy
+Terraform refresh
+
+HCL- Hashicorp configuration language , its a human & machine friend language which has to be used be the tool to write the tf file or code file.
+Install Terraform with below commands in linux:
+
+wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install terraform
+
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs
+
+.terraform.lock.hcl --> After running terraform init this file is generated , the code is converted in hcl language & now locked . Changes can't be done now in main.tf
+
+terraform.tfstate file / backup --> It stores the current state of the environment is saved in this file, when we run terraform apply command.
+
+terraform va9lidate --> The terraform validate command is used to validate the syntax of Terraform files. Terraform performs a syntax check on all Terraform files in the directory specified and displays warnings and errors if any files contain invalid syntax.
+
+.terraform --> is a folder in which all the  plugins , software, configuration will be downloaded automatically will be kept here. 
+
+Terraform v1.5.5 - security reason . before version access key & pwd was to be kept in main file . but not now
+
+================================================================================================================
+Jenkins Related more stuff:
+=============================================================================
+Jenkins Pipeline : It is a single platform that runs entire pipelinesas code.Instead of building several jobs for each phase , you can now code the entire workflow and put it in a Jenkinsfile.
+
+Jenkins File: It is a text file that stores the pipelinesas code .It is written using the groovy DSL. It can be written based on two syntax:
+
+Scripted Pipeline: Code is written in the Jenkins UI instance and is enclosed within the node block.
+node {
+scripted pipelines code
+}
+
+Declaraive Pipeline: (Jenkinsfile)
+Code is written locally in a file and is checked into a SCM and is enclosed within the pipeline block
+
+node{
+declarative pipeline code
+}
+
+How Jenkins master/slave works?
+
+ 
+
+
+===================================
+Python as a Scripting language.
+==================================
+We use python to automate tasks.It is an open-source.PYTHON has a lot of Libraries
+It supports Procedure-Oriented programming & OOP.
+PYTHON is interpreted language.
+
+How to create a requirement file from the main.py file/code? If developer not  given the requirement fiel.
+main.py file
+main.py file will run only when dependenciesare installed .
+pip freeze > requirement.txt
+pip install -r requirement.txt
+python main.py
+
+PYTHON Modules(Libraries): are the libraries that include a set of functions, variables which are defined earlier.
+In other words they are the files that include ready to use function,variables etc .PYTHON module which you can also create yourown module.
+We can create module one time and then we can you it .
+
+Syntax:
+import time       --> download
+from calender import isleap    -->
+
+types of modules:
+sys module
+Os module
+Subprocess
+Math
+Random
+Date time 
+
+Python def - used to define a funcion , its  palced before a funcion name that is provided by the user to crete a user-defined fn.
+
+
+Boto3 : It can be used with only AWS .Amazon managees the utility for only python
+Automation on AWS with the help of python or programming/scripting can be achieved with the help of boto3 
+Boto3 makes it easy to integrate your python application , libraries or script with aws.
+AWS  SDK for python provides a python API for AWS infra services . Using SDK for python , you can build application on top of Amazon S3 , EC2,Amazon DynamoDB etc
+AWS defines boto3 as a Python Software Development Kit to create, configure, and manage AWS services.
+
+Top 10 Microsoft Azure Products and Services
+Azure DevOps- Users could find Azure DevOps services as ideal choices for building, testing, and deploying with CI/CD. 
+
+Azure Blob Storage-It is optimized for storing huge amounts of unstructured data, the data that doesn’t belong to a particular data model or definition.Adding images or documents to the browser directly. Storing data for backup and restore disaster recovery, and archiving
+Azure Virtual Machines- You can get Burstable VMs, Compute-optimized VMs, Memory-optimized VMs, and general-purpose VMs with Microsoft Azure. Applications in the cloud
+Azure Backup-This service also allows you to keep your application consistent with the help of VSS snapshot (Windows) and fsfreeze (Linux). 
+Azure Cosmos DB-Azure Cosmos DB offers a globally distributed, fully managed NoSQL database service. This distribution involves transparent multi-master replication. 
+
+Azure Active Directory-This Azure Active Directory service provides the user id and password management for users logging to enter in at the same time. The facility of single sign-on can help users gain simpler access to their apps from any location.
+AWS Vnet-Azure virtual network enables Azure resources to securely communicate with each other, the internet, and on-premises networks.
+Azure Load Balance- Azure Load Balancer operates at layer 4 of the Open Systems Interconnection (OSI) model. It's the single point of contact for clients. Load balancer distributes inbound flows that arrive at the load balancer's front end to backend pool instances. These flows are according to configured load-balancing rules and health probes. 
+Azure Site Recovery- Microsoft's Azure Site Recovery (ASR) is a solid and reasonably priced disaster recovery service. All organizations need to adopt disaster recovery as a service since it enables the seamless operation of the business in the case of a disaster.
+It includes application-consistent snapshots to ensure the safety of your data in the event of a disaster.
+
+==========================================**************===============================================
+
+=========================================****************=============================================
+
+============================
+what is security group in aws?
+A security group acts as a virtual firewall for your EC2 instances to control incoming and outgoing traffic. Inbound rules control the incoming traffic to your instance, and outbound rules control the outgoing traffic from your instance. When you launch an instance, you can specify one or more security groups.
+
+AWS Security Groups help you secure your cloud environment by controlling how traffic will be allowed into your EC2 machines. With Security Groups, you can ensure that all the traffic that flows at the instance level is only through your established ports and protocols.
+----
+What is IAM in AWS?
+AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. With IAM, you can centrally manage permissions that control which AWS resources users can access. You use IAM to control who is authenticated (signed in) and authorized (has permissions) to use resources.
+------network ACL (NACL)
+An optional layer of security that acts as a firewall for controlling traffic in and out of a subnet. You can associate multiple subnets with a single network ACL, but a subnet can be associated with only one network ACL at a time.
+
+AWS Network Access Control List?
+NACL helps in providing a firewall thereby helping secure the VPCs and subnets. It helps provide a security layer which controls and efficiently manages the traffic that moves around in the subnets. It is an optional layer for VPC, which adds another security layer to the Amazon service. 
+There are two types of NaCl: 
+
+Customized NACL: It can also be understood as a user-defined NACL, and its inherent characteristic is to deny any incoming and outgoing traffic until a rule is added to handle the traffic.  
+Default NACL: This is the opposite of customized NACL, which allows all the traffic to flow in and out of the network. It also comes with a specific rule which is associated with a rule number, and it can’t be modified or deleted. When the request doesn’t match with its associated rule, the access to it is denied. When a rule is added or removed, changes are automatically applied to the subnets which are associated with it.  
+------
+==================Private & Public Subnet=====
+Difference btwn private ad public subnet?
+Public subnets are typically used to host resources that are accessible from the public internet, such as web servers or load balancers, while private subnets are used to host resources that should not be accessible from the internet, such as database servers or internal applications.
+===============
+What is AWS Lambda?
+Run code without provisioning or managing infrastructure. Simply write and upload code as a .zip file or container image.Save costs by paying only for the compute time you use—by the millisecond.
+AWS Lambda is an event-driven, serverless computing platform provided by Amazon as a part of Amazon Web Services. Therefore you don’t need to worry about which AWS resources to launch, or how will you manage them. Instead, you need to put the code on Lambda, and it runs.
+
+In AWS Lambda the code is executed based on the response of events in AWS services such as add/delete files in S3 bucket, HTTP request from Amazon API gateway, etc. However, Amazon Lambda can only be used to execute background tasks.
+
+AWS Lambda function helps you to focus on your core product and business logic instead of managing operating system (OS) access control, OS patching, right-sizing, provisioning, scaling, etc.
+
+=====
+VPC-A VPC is a virtual network specific to you within AWS for you to hold all your AWS services. It is a logical data center in AWS and will have gateways, route tables, network access control lists (ACL), subnets and security groups.
+=============Basic components of VPC:==========================
+Virtual private cloud (VPC) — A virtual isolated network dedicated to your AWS account.
+
+Subnet — A range of IP addresses in your VPC.
+
+Route table — A set of rules, called routes, that are used to determine where network traffic is directed.
+
+Internet gateway — A gateway that you attach to your VPC to enable communication between resources in your VPC and the internet.
+
+VPC endpoint — Enables you to privately connect your VPC to supported AWS services and VPC endpoint services. Instances in your VPC do not require public IP addresses to communicate withresources in the service.
+
+Public Subnet
+A public subnet is a subnet that is associated with a route table that has a route to an Internet gateway. This connects the VPC to the Internet and to other AWS services.
+=========
+Types of Load Balancer are :
+Elastic Load Balancing supports four types of load balancers: Application Load Balancers, Network Load Balancers, Gateway Load Balancers, and Classic Load Balancers.
+==
+
+
+===========Difference between S3 & EBS :==========================
+AWS Storage Options:
+Amazon S3: Amazon S3 is a simple storage service offered by Amazon and it is useful for hosting website images and videos, data analytics, etc. S3 is an object-level data storage that distributes the data objects across several machines and allows the users to access the storage via the internet from any corner of the world.
+
+Amazon EBS: Unlike Amazon S3, Amazon EBS is a block-level data storage offered by Amazon. Block storage stores files in multiple volumes called blocks, which act as separate hard drives, and this storage is not accessible via the internet. Use cases include business continuity, transactional and NO SQL database, software testing, etc.
+    Diff btw EBS & S3?
+1.)As EBS storage is attached to the EC2 instance and is only accessible via that instance in the particular AWS region, it offers less latency than S3 which is accessed via the internet. Also, EBS uses SSD volumes which offers reliable I/O performance.
+
+2.)Amazon S3 provides durability by redundantly storing the data across multiple Availability Zones whereas EBS provides durability by redundantly storing the data in a single Availability Zone
+=============
+Difference between docker-compose and docker run  | The docker-compose command codes all runtime configuration data in an aptly named YAML file called docker-compose.yaml.
+
+1.The key difference between docker run versus docker-compose is that docker run is entirely command line based, while docker-compose reads configuration data from a YAML file. 
+2.The second major difference is that docker run can only start one container at a time, while docker-compose will configure and run multiple.
+
+version: '3.9'
+services:
+  nginx-service:
+    container_name: my-website
+    image: nginx:latest
+    cpus: 1.5
+    mem_limit: 2048m
+    ports:
+      - "80:80"
+    volumes:
+      $PWD/website:/usr/share/nginx/html
+========
+What is the difference between Docker and Swarm?
+
+Docker is the core technology that enables the creation of containers, while Docker Swarm is a tool that helps manage and scale a Docker container cluster. 
+Docker Swarm is a lightweight, easy-to-use orchestration tool with limited offerings compared to Kubernetes. 
+====
+What is Docker compose used for?
+Docker Compose is a tool that helps you define and share multi-container applications. With Compose, you can create a YAML file to define the services and with a single command, you can spin everything up or tear it all down.
+
+What is docker swarm?
+A Docker Swarm is a group of either physical or virtual machines that are running the Docker application and that have been configured to join together in a cluster.
+The activities of the cluster are controlled by a swarm manager, and machines that have joined the cluster are referred to as nodes.
+======
+ENTRYPOINT specifies the executable to be invoked when the container is started. ENTRYPOINT commands cannot be overridden or ignored, even when you run the container with command line arguments.
+ENTRYPOINT instructions can be used for both single-purpose and multi-mode docker images where you want a specific command to run upon the container start.
+
+CMD: Sets default parameters that can be overridden from the Docker command line interface (CLI) while running a docker container.
+============
+Kubernetes runs containers on a cluster of virtual machines (VMs). It determines where
+to run containers, monitors the health of containers, and manages the full lifecycle of VM
+instances. This collection of tasks is known as container orchestration.
+
+=========What is Htop command======
+The htop command is used to manage the system processes like CPU & memory consumption, running tasks, and details of each system process. This command is utilized to find the process for a specific user, highlight certain processes, sort processes based on columns, filter the processes, and many more.
+
+What does top command do in Linux?
+The top command is used to show the active Linux processes. It provides a dynamic real-time view of the running system.
+
+===============
+What is free and vmstat commands?
+free displays the total amount of free and used physical and swap memory in the system, as well as the buffers used by the kernel. The shared memory column should be ignored; it is obsolete. vmstat reports information about processes, memory, paging, block IO, traps, and cpu activity.
+
+==========
+What is NAT gateway used for?
+A NAT gateway is a Network Address Translation (NAT) service. You can use a NAT gateway so that instances in a private subnet can connect to services outside your VPC but external services cannot initiate a connection with those instances.
+
+=====
+What is the difference between fetch and pull?
+Git Fetch is the command that tells the local repository that there are changes available in the remote repository without bringing the changes into the local repository. Git Pull on the other hand brings the copy of the remote directory changes into the local 
+
+===
+FROM alpine:latest
+ENV MY_ENV=development
+ENV LOG_LEVEL=error
+CMD [ "/bin/sh", "-c", "export" ]
+Overwriting the ENV when we want to run the container command:Here we are overwriting the ENV variable Devlopment to production at run time
+docker container run --env MY_ENV=production docker-demo:v2  
+
+
+ADD vs COPY in Docker File:
+1) COPY can’t take remote URLs as source, whereas ADD can.
+2) COPY can’t extract a tar file directly into the destination.
+
+=============What is System manager & secret Manager?
+These are used to store the User name & password safely ,securely and can be accessed when needed ,like CICD docker user & pwd for registry , 
+For Database we highly use secret manager as the data is very critical so we can't compromise on security.
+We can choose a combination of System manager & secret Manager at organization level so as to keep in mind the cost to store the Credentials should be in budget . SO we can store the User in System manager  & All Passwords in secret Manager.
+Also Hashicorp vault is there which is a Open source tool to manage and store the credentials . Use Case:
+1. Company which use hybrid cloud will prefer the Hashicorp Valult 
+2. If a company want to migrate to other cloud that its easy to manage the credentials and will create no boundation to tie to AWS System manager & secret Manager.
+
+
+==============
+What is the location of logs in EC2?
+Ans : etc/car/logs/messages
+
+Monitoring-kubernetes-tutorial-using-grafana-and-Prometheus
+Step 1 Create a GKE cluster
+Step 2 Create a Namespace monitor (good practice)
+kubectl create ns monitor
+Step 3 go to helm repo (code) of Promothus and grafana Helm code is available on
+https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack
+Step 4 Add the repo in helm
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+helm repo list
+Step 5 Install the Grafana and Promothus
+helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack --namespace monitor
+"kube-prometheus-stack" is the name of the release. You can change this if you want.
+"prometheus-community/kube-prometheus-stack" is the name of the chart.
+"monitor" is the name of the namespace where we are going to deploy the operator.
+
+Step 6 You can verify your installation using:
+kubectl get pods -n monitor
+Step 7 create a service of grafana
+Grafana Service :- create a service Of on 3000 port as a loadbalancer
+or
+kubectl expose deployment kube-prometheus-stack-grafana --port—3000 -- 	target-port--3000 --name=grafana --type=LoadBalancer -n monitor
+Step 8 verify service and unlock grafana
+kubectl get svc -n monitor
+admin/prom-operator
+Step 9 Explore Autoconfigured grafana dashboards
+Some Dashbords
+General / Kubernetes / Compute Resources / Cluster
+General / Kubernetes / Compute Resources / Namespace (Pods)
+Step 1() Delete the Helm chart
+helm uninstall [RELEASE_NAME]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
