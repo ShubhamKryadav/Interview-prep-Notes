@@ -2,8 +2,8 @@ https://907592850687.signin.aws.amazon.com/console
 =========================
 Access key= 
 Secret access key=
-============================================
-Accessing someones hardware virtualli is Virtualization.
+=======================================================================================================================================================================================
+Accessing someones hardware virtually is Virtualization.
 Accessing someones Virtal machine with help of internet is Virtual machine.
 
 Keys:
@@ -11,8 +11,8 @@ ssh-keygen
 
 /root/.ssh/id_rsa-At this location key are generated.
 id_rsa.pub= means public key
-
 id_rsa=means private key(also mentioned inside file)
+
 Fingerprint encryption.
 Switch user cmnd:  su ravindra 
  
@@ -26,7 +26,7 @@ Latency -higher response from data center lesser latency.
 We choose less latency data center for fast response
 
 Amazon Machine Images (AMI)
-AMI:It is an OS in which amazon has installed some softwareor which amazon has modified as per own requirement ,pre-installed package and named as AMI
+AMI:It is an OS in which amazon has installed some software or which amazon has modified as per own requirement ,pre-installed package and named as AMI
 or 
 Customized OS by the Amazon.
 We can create instances with AMI .Eg. [OS +PYTHON + ms office + putty ] & make a image in VM Instance  of all these and directly provide to anyone or use yourself without installing same softwares everytime.
@@ -131,12 +131,10 @@ echo "Shubham Practice 101" > index.html
 echo "Shubham Practice 202" > index.html
 echo "Shubham Practice 303" > index.html
 
-
-
 If you want to change the Screen content which comes when we use the ElasticIP
 gp to cd /usr/share/nginx/html
 ls
-index.html -nginx home page file if any web server is there which is running the dtaa is coming ffrom index.html file .
+index.html -nginx home page file if any web server is there which is running the dtaa is coming from index.html file .
 open & do change as per your need.
 
 =======================================================================
@@ -146,10 +144,9 @@ If low use then reduce the server or resource.
 If High use then increase the server automatically.
 We can set the Autoscaling in Instances b enbling and setting the limit. 
 Cooling period= 
-HIgh Availability: Means running your service in atleast 2 data center so as to survive data loss issue .
+High Availability: Means running your service in atleast 2 data center so as to survive data loss issue .
 =======================================================================
-(ELB)Loadbalancer: Distribute te traffic among VM insances
-Managed b AWS , we only need to configure.
+(ELB)Loadbalancer: Distribute the traffic among VM insances. Managed b AWS , we only need to configure.
 
 Distribution of Traffic via loadbalancer  can be based upon :
 1. Ration based: We can define how much traffic to be send to which POD or Machine.
@@ -174,7 +171,7 @@ Snapshot is used to take backup of Volume .
 
 Create VM with EC2 then install python 
 
-Security - Its instance firewaly , we restrict traffic from security group .
+Security - Its instance firewall , we restrict traffic from security group .
 
 Private IP -Inside same VPC machine can communicate with other VM though Private IP.
 
@@ -188,13 +185,14 @@ Name of S3 bucket can't change once name given .
 static url 
 http://staticshubhams3resume.s3-website.ap-south-1.amazonaws.com
 What is S3 ?
-Public cloud & its globall accessible  Amazon S3 (Simple Storage Service) is a
+Public cloud & its globally accessible  Amazon S3 (Simple Storage Service) is a
 - Scalable
-Highly available
-Secure and
-Cost effective
+- Highly available
+- Secure and
+- Cost effective
+
 Cloud storage service provided by Amazon Web Services (AWS).It allows you to store and retrieve any amount of data from anywhere on the web.
- The content is globally accessible but s3 bucke is created in a AWS region which is near or any.
+The content is globally accessible but s3 bucke is created in a AWS region which is near or any.
 We can store upto 5TB and then we can upgrade by writing to support team.
 =======
 Scalability
@@ -203,7 +201,7 @@ Tip:
 Choose multipart uploads to upload an object if the size of the object is huge.
 =====
 Security
-S3 provides bucket policies, access control, and encryption settings are appropriatelyconfigured.
+S3 provides bucket policies, access control, and encryption settings are appropriately configured.
 Encrypt data at rest using server-side encryption options provided by S3. Additionally,enable encryption in transit by using SSIJTLS for data transfers.
 Enable access logging to capture detailed records of requests made to your S3 bucket.
 Monitor access logs and configure alerts to detect any suspicious activities or unauthorized access attempts.\
@@ -218,7 +216,7 @@ If the data is imp aws will keep the data in 3 different zone
 Hot Data:Data which is accessed frequently.
 Cold data:Data which is infrequently accessed .
 S3 Storage Class:
-1.Standard: Data which is used frewuentl within days. Eg. Data of current batch
+1.Standard: Data which is used frequently within days. Eg. Data of current batch
 2.Intelligent tiering: Data which you use randomly any time . If you dont use much it will transfer data to other storage depending on use .(Miscellaneous data )
 3.Infrequent access: Dont use daily but is important may need to use infrequently. Eg data of batch 27 ,28 .
 4.One Zone : Not imp data is kept in this zone ( Kept in only one data center )
@@ -233,7 +231,7 @@ docker run -ti -d -p 80:80 -v /root/car-repair-html-template:/usr/share/nginx/ht
 ============================================================================================================
 DATABASE
 ============================================================================================================
-Database :=electronically arrangement of data is know as database which we can manage with the helpof of application or software.
+Database :=electronically arrangement of data is know as database which we can manage with the help of of application or software.
 Database type:
 1 Relational: Which are structured,unique in proper row column.Eg MySQL,Oracle
 2. Non-relational db:Unstructured & Dont use tabular row,column format . Eg MongoDB,CassandraDB, OracleNoSQL,CouchDB.
@@ -282,7 +280,7 @@ Range is 0-32 for CIDR.
 for 1 IP to allow use 32 
 for 16 IP to allow use 28.
 
-Internet Gateway: Attach the IG to the VPC to enble comm. b/w resurces in our VPC & the internet.
+Internet Gateway: Attach the IG to the VPC to enble comm. b/w resurces in your VPC & the internet.
 Subnet -Logical suppression of IP address.
 Route Table: :list of ip allowed 
 
@@ -298,6 +296,35 @@ Practical -8
     set rule for IP which are allowed so that people you want them to access the IP can use via VPN.
 
 
+========================EventBridge===========================================================================
+https://www.youtube.com/watch?v=6odEoNSsR3w&t=20s
+What is Amazon EventBridge ?
+EventBridge is a fully managed services that takes care of event ingestion and delivery, security, authorization, error handling and required infrastructure management tasks to set up and run a highly scalable serverless event bus
+
+*: It is serverless event bus that connects application data from your own apps, SaaS, and AWS services and routes that data to targets such as AWS Lambda or Amazon SNS.
+*: Enables you to set up routing rules that determine where to send your data and build loosely coupled, distributed, event driven applications.
+*: EventBridge was formerly called Amazon CloudWatch Events and it uses the same CloudWatch Events API.
+*: Your account has one default event bus,which receives events from AWS services.
+Eg : If any event happens in AWS services , Custom apps , SAAS Apps , Like a EC2 is stopped or Any file is uploaded to S3 bucket at that
+Event Bus : Its a  bus which carries events or recieves events then executing bunch of rules & figureout where to send the event data to 
+Data Source --> Goes to Eventbridge --> Default Event Bus -->Check Schema discovery --> Check for rules registered for event ---yes--> Send event data to target .
+
+Schema discovery: when event occurs then it goes to schema discovery which will check in its schema registry , means the event occured is registered in that registry then next what to do with the event so set up rules to filter ,send event to target.  (Lambda, Kinesis, Amazon SNS, )
+
+SCHEMA REGISTRY : -
+*: Schema registry is a container for schemas.
+*: Schemas are available for the events of all AWS services on Amazon EventBridge.
+*: You can also create or upload your own schemas, or automatically infer schemas directly from events running on event buses.
+*: Each schema can have multiple versions. You can view the latest schema, or select earlier versions.
+*: For any schema you can download code bindings.
+
+RULES : -
+A rule matches incoming events and routes them to targets for processing.
+A single rule can route an event (json) to multiple targets, all of which are processed
+in parallel and in no particular order.
+TARGETS: 
+A target processes events and receives events in JSON format.
+A rule's target must be in the same region as the rule.
 ============================
 Practical-7
 1.Create EC-2 with kep pair Batch30Linuxkey as we want to use it
@@ -308,7 +335,7 @@ RDS & EC2 are connected with wach other as per our configs.
 Login in mobaxterm : ubuntu (Not ec2-user) 
 sudo apt update 
 sudo apt upgrade 
-sudo apt install mysql-client   (mysql-client(software name ) willinstall as mysql is needed to run queries)
+sudo apt install mysql-client   (mysql-client(software name ) will install as mysql is needed to run queries)
 mysql (will throw some error because myclient server is not installed so we will get the endpoint address "database-1pr6.ca0nqozczive.ap-south-1.rds.amazonaws.com" of RDS in Connectivity & security  )
 Connect with endpoint with this command:
 mysql -h <endpoint> -u admin -p 
@@ -346,8 +373,8 @@ git config --global user.email "shubham029yadav@gmail.com"
 
 Java JDK used 
 
-=======================================
-Jenkins:A CI server which manages and conrol processes such as plan,code build test deploy operate and monitor in DevOps evnvironment.
+======================================Jenkins Start: =================================
+Jenkins: A CI server which manages and conrol processes such as plan,code build test deploy operate and monitor in DevOps evnvironment.
 ==================================
 Jenkins: Jenkins is an open source continuous integration/continuous delivery and deployment (CI/CD) automation software DevOps tool written in the Java programming language. It is used to implement CI/CD workflows, called pipelines.
 or
@@ -370,11 +397,26 @@ CI- It is the practice of running your build and tests automatically ever time w
 Unit test : The test that developer do for the checking of any code .Logic test is tested in this test .
 
 Building: We use the build for large program or project .Build tools is used for build . Build is a process that covers all the steps required to create a deliverable of your software . Eg maven tool for java , pythin dont need building tool.
+Build Stages : The build stage is the first phase of the CI/CD pipeline, and it automates a lot of the steps that a typical developer goes through, such as 
+: installing tools, downloading dependencies, and compiling a project. 
+
 difference 
 Compile: 
 
+What is difference between jar and WAR in Spring Boot: ?
+JAR : files allow us to package multiple files in order to use it as a library, plugin, or any kind of application. 
+WAR:  files are used only for web applications. 
+
+What is dependency vs plugin in POM xml: ?
+Plugins are software components that extend the functionality of another software application. A dependency is a library that is needed by the application you are building, at compile and/or test and/or runtime time.
+
+How to Secure Jenkins pipeline: ?
+Ans: Implement advanced Authentication mechanisms such as LDAP, SSO, MFA, etc.
+2.Enable matrix-based security and manage Jenkins permissions by group needs.
+3.Remove unnecessary permissions for the “authenticated users” group
+4.Configure access control for builds.  --> Using Authorize Project Plugin.
 ======================================
-Container- Container is a std unit that packages up the code and all its dependencies so that the application runs quickly & reliabl from one computing environment  to another.
+Container- Container is a std unit that packages up the code and all its dependencies so that the application runs quickly & reliably from one computing environment  to another.
 
 Containerization-If any application packed in a container with its binary & libraries that process is call Containerization. To achieve this containerization process is all called containerd.
 
@@ -384,7 +426,7 @@ Componenets inside container are as follows:
 3.Package manager
 4.Apps
 5.Data
-=====================================================DOCKER============================================
+=====================================================DOCKER Begins============================================
 Docker:DOcker is a tool designed to create , deploy & run application with ease by using conainers.It ensures your application works seamlessly in any environment be it Deveplopment , Test, Production.
 
 docker inspect:In docker to IP address of container .
@@ -392,7 +434,7 @@ Docker is a container deveploment service .They keyword of docker are develop ,s
      
 Docker is a tool used by developers,ssadmins,DevOps etc to easily deploy their application in a sandbox called containers to run on the host OS i.i Linux.
 
-Whole idea of DOCKER is for developers to easily develop applications, ship them into comtainer which can then be deployed anywhere.
+Whole idea of DOCKER is for developers to easily develop applications, ship them into container which can then be deployed anywhere.
 	 
 Container is a runtime instance of a docker image.
 
@@ -414,19 +456,98 @@ There are several ways to monitor Docker containers in real time:
 docker logs : View the logs of a running container.
 docker attach : Attach to a running container and view its output.
 docker top : View the running processes of a container.
-docker stats:Every running container can be analyzed using this tool to determine its CPU, memory, network, and disk utilization.S3
-docker stats:Every running container can be analyzed using this tool to determine its CPU, memory, network, and disk utilization.
-================================KUBERNETES====================================================
-Kubernetes Cluster Architecture
+docker stats: Every running container can be analyzed using this tool to determine its CPU, memory, network, and disk utilization.
+
+Docker Questions: ?
+
+docker top <containername >- to see CPU memor of an container .
+sudo apt-get update && sudo apt install docker.io -y
+docker system df
+docker image prune -s  (Clean up command to free disk usage )
+
+Difference between docker-compose and docker run  | The docker-compose command codes all runtime configuration data in an aptly named YAML file called docker-compose.yaml. : ?
+1.The key difference between docker run versus docker-compose is that docker run is entirely command line based, while docker-compose reads configuration data from a YAML file. 
+2.The second major difference is that docker run can only start one container at a time, while docker-compose will configure and run multiple.
+
+version: '3.9'
+services:
+  nginx-service:
+    container_name: my-website
+    image: nginx:latest
+    cpus: 1.5
+    mem_limit: 2048m
+    ports:
+      - "80:80"
+    volumes:
+      $PWD/website:/usr/share/nginx/html
+========
+What is the difference between Docker and Swarm: ?
+
+Docker is the core technology that enables the creation of containers, while Docker Swarm is a tool that helps manage and scale a Docker container cluster. 
+Docker Swarm is a lightweight, easy-to-use orchestration tool with limited offerings compared to Kubernetes. 
+====
+What is Docker compose used for: ?
+Docker Compose is a tool that helps you define and share multi-container applications. With Compose, you can create a YAML file to define the services and with a single command, you can spin everything up or tear it all down.
+
+What is docker swarm: ?
+A Docker Swarm is a group of either physical or virtual machines that are running the Docker application and that have been configured to join together in a cluster.
+The activities of the cluster are controlled by a swarm manager, and machines that have joined the cluster are referred to as nodes.
+
+What does Docker load mean: ? sudo docker load < ubuntu_save.tar
+docker load – Load an image or repository from a tar archive. It restores both images and tags.
+
+What is docker save command: ? docker save "Image name" > backup.tar 
+The Docker save command saves a Docker image to a tar file.
+
+What is docker tag command: ?
+The Docker tag helps maintain the build version to push the image to the Docker Hub.
+docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+======
+ENTRYPOINT specifies the executable to be invoked when the container is started. ENTRYPOINT commands cannot be overridden or ignored, even when you run the container with command line arguments.
+ENTRYPOINT instructions can be used for both single-purpose and multi-mode docker images where you want a specific command to run upon the container start.
+
+CMD: Sets default parameters that can be overridden from the Docker command line interface (CLI) while running a docker container.
+ADD vs COPY in Docker File:
+1) COPY can’t take remote URLs as source, whereas ADD can.
+2) COPY can’t extract a tar file directly into the destination.
+
+How to create layers in Docker?
+A Docker image consists of several layers. Each layer corresponds to certain instructions in your Dockerfile . The following instructions create a layer: RUN , COPY , ADD .
+ 
+What is the maximum number of layers in Docker: ?
+The maximum number of layers set by docker that a docker image can have has been set to 127 layers.
+
+The Docker container lifecycle is comprised of several states, such as `created`, `running`, `paused`, `exited`, and dead.
+
+What are the types of Docker networks : ?
+Ans: There are three common Docker network types – bridge networks:
+1.Bridge network : uses a software bridge which allows containers connected to the same bridge network to communicate,  used within a single host.
+2.Host: Docker network host, also known as Docker host networking, is a networking mode in which a Docker container shares its network namespace with the host machine.
+        The application inside the container can be accessed using a port at the host's IP address (e.g., port 80).
+Below is an example Docker command to run a container in host networking mode:
+• docker run -it --name web2 --net=host vaibhavthakur/docker:webinstance2
+
+overlay networks: for multi-host communication. 
+
+macvlan networks : which are used to connect Docker containers directly to host network interfaces.
+
+Docker Network Related Commands:
+
+• docker network ls
+• docker network create <network-name>
+• docker network create -d <driver> <networkName>   docker network create -d bridge Flipkart network
+• sudo docker network inspect bridge
+===============================================================Docker ENds=====================================================================
+***********************************************************************************************************************************************************************************
+================================KUBERNETES Starts: =======================================================================================================
+Kubernetes Cluster Architecture: 
 A Kubernetes cluster includes a cluster master node and one or more worker nodes.
 These are referred to as the master and nodes, respectively.
 The master node manages the cluster.
-Cluster services, such as the Kubernetes API server, resource controllers, and schedulers, run
-on the master.
+Cluster services, such as the Kubernetes API server, resource controllers, and schedulers, run on the master.
 The Kubernetes API Server is the coordinator for all communications to the cluster.
-The master determines what containers and workloads are run on each node.
-When a Kubernetes cluster is created from either Google Cloud Console or a command line, a
-number of nodes are created as well. These are Compute Engine VMS
+The master determines what containers and workloads are running on each node.
+When a Kubernetes cluster is created from either Google Cloud Console or a command line, a number of nodes are created as well. These are Compute Engine VMS
 ========
 What is kubernetes?
 Kubernetes is an Open-source system for automating deployment,scalling & management of container-application.
@@ -458,7 +579,7 @@ Node in Kubernetes cluster is the main worker machine , also know as minions.
 Node provides all necesary services to run PODS.
 Node in Kubernetes systemis managed by the master.
 
-Helm is a tool that automates the creation, packaging, configuration, and deployment of Kubernetes applications by combining your configuration files into a single reusable package. 
+Helm is a tool that automates the creation, packaging, configuration, and deployment of Kubernetes applications by combining your configuration files into a single reusable    package. 
 
 Why do we use Helm?
 What is Helm in Kubernetes? – Sysdig
@@ -470,27 +591,27 @@ A Helm chart is a set of YAML manifests and templates that describes Kubernetes 
 Container Orchestration:KUBERNETES runs on a cluster of VM. It determines where to run containers, monitors the health of containers & manages the full lifecycle of VM instance. This collection is knowm as conainer Orchestration.
 
 Essential Componenets that run & maintain your cluster are:
-1.Kubernetes Master: Kubernetes Master is normally a separte server responsible for maintaining the desired state of cluster . It dose this by telling nodes hwo many instances of your application it should run 
+1.Kubernetes Master: Kubernetes Master is normally a separte server responsible for maintaining the desired state of cluster . It dose this by telling nodes how many instances of your application it should run 
 2.
 3.
 
-How Container communicate inside a POD?
+How Container communicate inside a POD: ?
 Ans: They Communicate using localhost . Cluster IP is generated for the POD , Kube-proxy generates the Cluster IP.
 
-Benifit of having mukti container in a POD?
+Benifit of having multi container in a POD: ?
 Ans: they , means Container A & container B can share same  network,storage etc. They can share the files beteween them if required easily .
 
-What is the main difference between POD & Container ?
-Ans: In containere me have to define and specify port , network , volume in CLI While in POD ever configuration is done with the yaml file.
+What is the main difference between POD & Container : ?
+Ans: In containere me have to define and specify port , network , volume in CLI While in POD every configuration is done with the yaml file.
 
-How to get the advance features like Autohealing & Autoscaling in kubernetes ?
+How to get the advance features like Autohealing & Autoscaling in kubernetes : ?
 Ans: When we deploy our application these feature will also come along . POD Don't have these feature thats's why we use deploment.
     
 
-How to debug a issue in POD and what are the basic commands for it?
+How to debug a issue in POD and what are the basic commands for it: ?
 Ans: kubectl logs podname & kubectl describe  pod "podname"(nginx)
 
-Why do we need Deployment when we can deploy the applications with POD?
+Why do we need Deployment when we can deploy the applications with POD: ?
 Ans:We can create zero down time application using  deployment 
 2. IN deployment it uses replicaset which ensures the no. of PODS that is provided in manifest.yaml file , if anyone kills any POD it will create another one in notime because we have defined the no of Replicaset for POD to be available inside a cluster.
 
@@ -499,21 +620,21 @@ If we deploy a application it will automatically create a pod because in Deploym
  kubectl delete po nginx-deployment-cbdccf466-5p4dl
 kubectl get pod -w  (watch the process process followed )
 
-KUBERNETES Services:
-Loadbalacing:
+KUBERNETES Services: A service is responsible for enabling network access to a set of pods.
+1 Loadbalacing:
 Whenver a POD goes down and a new POD comes up then the IP is also changes when POD comes , Autohealing is  occuring but if we share the IP to internal team then there will be conflict because IP is change . 
 To resolve this issue we create service on top of deployment which acts as a Loadbalancer(service ) it uses a component in kubernetes whcih is kube-proxy.
 
-2.Service Discover - USes Labele & selector  so that the application not affect whether Replicas is increased or new pod created no affect nomatter how many times IP changes now.
+2.Service Discovery: - USes Labele & selector  so that the application not affect whether Replicas is increased or new pod created no affect nomatter how many times IP changes now.
 
-3.Expose:Exposing the applicationto the world.
+3.Expose: Exposing the application onto the world.
  Cluster IP- Inside the Cluster 
  NodePort IP- anybody inside the organization , who has access to ypur node IP can see the application.
  Loadbalancer IP.- Externally user can acces with the help of LB IP external IP.
- Question 4
-What is the difference between
-Docker container and a
-Kubernetes pod ?A pod in kubernetes is a runtime specification of a container in docker. A pod provides more declarative way of defining using YAML and you can run more than one container in a pod.
+ 
+Question 4
+What is the difference between Docker container and a Kubernetes pod : ?
+A pod in kubernetes is a runtime specification of a container in docker. A pod provides more declarative way of defining using YAML and you can run more than one container in a pod.
 
 Kubernetes Ingress:Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the Ingress resource. Ingress may provide load balancing, SSL termination and name-based virtual hosting.
 (In Service below mentioned feature were missing)
@@ -569,6 +690,7 @@ GlobalSign ,Godaddy etc provide the SSL certificates their clients.
 ********************Configmap in KUBERNETES?**********************************
 What is a ConfigMap used for?
 A ConfigMap is an API object used to store non-confidential data in key-value pairs. Kubernetes pods can use ConfigMaps as configuration files, environment variables or command-line arguments. Config map solving the problem of storing the information which can be used by the application at latter point of time.
+
 How we can achieve the configmap ?
 We have to create a configmap which will store the data & information in the form of environment variables,volume mounts and then mount it inside the PODS. 
 
@@ -578,11 +700,10 @@ Details in DB should not be hardcoded because hacker can retrieve the data, by t
 AS kubernetes uses container , so we will use config map and store information like DB port ,etc and we can mount the information in configmap inside PODS .
 The information can be stored inside the POD as a Enviroment variable , or as a file on container file system .  
 
-
-Where is ConfigMap stored in Kubernetes?
-Where Are Kubernetes ConfigMaps Stored? Kubernetes stores API objects like ConfigMaps and Secrets within the etcd cluster.Etcd is essentially the brain of Kubernetes, since it stores all of the key-value objects that Kubernetes requires to orchestrate the containers.
+Where Are Kubernetes ConfigMaps Stored: ? 
+Kubernetes stores API objects like ConfigMaps and Secrets within the etcd cluster.Etcd is essentially the brain of Kubernetes, since it stores all of the key-value objects that Kubernetes requires to orchestrate the containers.
  
-What is etcd in Kubernetes?
+What is etcd in Kubernetes: ?
 etcd is an open source distributed key-value store used to hold and manage the critical information that distributed systems need to keep running.
 etcd data is stored in folder /var/lib/etcd  
 docker commit <container id > <new image name >
@@ -595,37 +716,105 @@ env:
  — name:
  valueFrom:
    configMapKey:
-   name:test—cm
-   Key:db-port
+   name: test—cm
+   Key: db-port
 ---------------------
 spec :
 containers :
 - name: python-app
 image: abhishekf5/python-sampIe-app-demo
 volumeMounts :
-- name: db-connection
-1
-mountPath: /opt:
+- name: db-connection1
+mountPath: /opt
 ports :
 - containerPort: 8ØØØ
-vol umes :
+volumes :
 - name: db-connection
 configMap :
 =================================================*********Secret in KUBERNETES?**********************************===========================================================
 ============================================================================================================================================
 what is secrets in kubernetes?
-Secrets can be defined as Kubernetes objects used to store sensitive data such as user name and passwords with encryption. There are multiple ways of creating secrets in Kubernetes. Creating from txt files. Creating from yaml file.If you put an kind of data in secrets .So Before the obeject is saved in etcd kuberentes will encrypt the data also kubernetes secret allows user to custom encrypt and pass this value to the API server and say wheneever API server is feeding som data to etcd you can use the custom encrption .
-Also if hacker tries to hack the etcd and custom encrypt is used he can't get access to it as he don't have the decryption key .Hacker could get ino config map and read details and POD details 
+Secrets can be defined as Kubernetes objects used to store sensitive data such as user name and passwords with encryption. 
+There are multiple ways of creating secrets in Kubernetes.: 1. Creating from txt files. 2. Creating from yaml file. If you put an kind of data in secrets .So Before the obeject is saved in etcd kuberentes will encrypt the data also kubernetes secret allows user to custom encrypt and pass this value to the API server and say whenever API server is feeding some data to etcd you can use the custom encrption .
+Also if hacker tries to hack the etcd and custom encrypt is used he can't get access to it as he don't have the decryption key .Hacker could get into config map and read details and POD details .
+When creating Secrets, you are limited to a size of 1MB per Secret
 Secrets are objects that store sensitive information, such as passwords, API keys, OAuth tokens, and Secure Shell (SSH) keys.
 
 1.If a hacker gets access to KUBERNETES CLUSTER Then he can see the secret details by running kubectl describe configmap , kubectl edit secret, etc and can get sensitive information if stored inside secret also but we use RBAC to control the access of any user.We can give least privillege to any person who can see the kubernetes cluster information .
-We can prevent any one accessing the secret by resticting their access in RBAC.
+We can prevent any one accessing the secret by restricting their access in RBAC.
+
+3 Types of Secret are :
+1.Generic
+2.Docker-registry
+3.TLS
+
+In How many ways we can create secret?
+1. kubectl create secret generic database-credentials \
+--from-file=username=username.txt \
+--from-file=password=password.txt \
+--namespace=secrets-demo
+
+2.using yaml file:
+apiVersion: v1
+kind: Secret
+metadata:
+  name: demo-secret
+type: Opaque
+data:
+  username: YWRtaW4=
+  password: cGFzc3dvcmQ=
+  
+  
+How to Use Kubernetes Secrets ?
+The following are the three main ways a Pod can use a Secret:
+
+As container environment variables 
+As files in a volume mounted on one or more of its containers.
+By the kubelet when pulling images for the Pod — imagePullSecrets.
+
+1 way to use secret :Using Secret data as container environment variables.Secret data you created exposed as environment variables. 
+env:
+        - name: USER
+          valueFrom:
+            secretKeyRef:
+              name: database-credentials
+              key: username.txt
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: database-credentials
+              key: password.txt
+2 way to use secret :
+    volumeMounts:
+    - name: secret-volume
+      mountPath: /etc/config/secret
+  volumes:
+  - name: secret-volume
+    secret:
+      secretName: database-credentials
+	  
+kubectl -n secrets-demo exec volume-test-pod -- cat /etc/config/secret/username.txt
+
+3 way to use secret :kubelet using Secret data when pulling images for a Pod
+apiVersion: v1
+kind: Pod
+metadata:
+  ...
+spec:
+  containers:
+    ...
+  imagePullSecrets:
+    - name: <your-registry-key>
 
 kubectl exec -it sample-python-app-7b7fd5fd78-6rtbq /bin/bash
 
 Command to create a secret:
+kubectl create secret generic database-credentials \
+--from-file=username=username.txt \
+--from-file=password=password.txt \
+--namespace=secrets-demo
+Or
 kubectl create secret generic test-secretl-- from-literal=db-password="abhi "
-
 kubectl create secret generic test-secretl-- from-literal=db-port="3306"
 
 kubectl describe secret test-secret
@@ -635,6 +824,7 @@ kubectl describe cm test-cm
 echo Mndhd== | base64 --decode    --> Decode the basic encryption provided by Kubernetes.
 
 We use Hashicorp vault for encryption in real time.
+-----RBAC------------------------------------------------------
 
 What is the RBAC rule in Kubernetes?
 In Kubernetes, RBAC policies can be used to define the access rights of human users (or groups of human users). Kubernetes identifies human users as user accounts. However, RBAC policies can also govern the behavior of software resources, which Kubernetes identifies as service accounts.
@@ -690,18 +880,129 @@ We can use ArgoCD, keyclock , ISTIO, . Exploring the additional capabilities API
 
 CRD-Custom resource defining , defining new type of API to kubernetes b submitting CRD .yaml file define resource with extended capabilities .
 CR-
+
+-------Statefullset ------------------------------------------------------------------------------------
+What is Statefulset?
+Statefulsets are Kubernetes resource that allow us to deploy and manage stateful applications.
+
+Quest:Difference Between Deployment & Daemon Set: ?
+Ans: Deploment makes the POD available in any node  But daemonset make sure that the replicas of Pod runs in each and every node of Cluster.Eg: such as system operations services, collecting logs, monitoring frameworks like Prometheus, and storage volumes.
+
+Daemonset: Definition - A DaemonSet ensures that all Nodes run a copy of a Pod. As nodes are added to the cluster, Pods are added to them. As nodes are removed from the cluster,
+those Pods are garbage collected. Deleting a DaemonSet will clean up the Pods it created.
+
+What is statefullaplication : ?
+It is a type of application which requires persistent storage to function properly .Eg database
+Stateful applications like the Cassandra, MongoDB and mySQL databases all require some type of persistent storage that will survive service restarts.
+
+Stateless APplication: The key difference between stateful and stateless applications is that stateless applications don’t “store” data whereas stateful applications require backing storage.Eg web which serves the satatic content which dosen't require any persisent storage.
+
+What is the difference between StatefulSet and Deployment : ?
+A StatefulSet is better suited to stateful workloads that require persistent storage on each cluster node, such as databases and other identity-sensitive workloads.
+A Deployment, on the other hand, is suitable for stateless workloads that use multiple replicas of one pod, such as web servers like Nginx and Apache
+
+Issue in deployment for DB related deployment are:
+1. If there are many POD of DATA base then user can read and write any POD and the POD which it communicates only gets updated rest are not synced with the updated details.
+2. If we create a Central POD for write then if the POD restarts the IP changes so user will get not output if IP changes . No proper DNS name is there  .Also how it will update the other pods that user has update the data.
+
+Features of Statefullset:
+1.Unique Host name will be assigned to POD when we use Statefullset .Host name Starts from 0 , if PODs recreate or restarts then same IP will be given .
+2.In statefulset POD are created one by one when POD run succesfully then 2nd POD will be creted sequenially. Same process for deletion.
+
+Host name is given to all pod we can tell the appliaction that for writing pupose please use POD1 (mysql-0).
+When we increase replica of DB POD then new POD2 will 1. clone all the data from (mysql-0) 2.syncronise the update on POD 1 , Inside new POD for that we mention CentralHostname-(mysql-0)Main POD.
+
+Unique DNS name for the Db POD on which application want to perform the write operation .
+Headless service provides that Unique DNS name to POD .Below is the example.
+mysqI•O.<headIess_service_name>.<namespace>.svc.cIuster.domain
+mysql•o.headless-svc.default.svc.cluster.local
+
+kubectl get pods -w -l app=ngnix
+To scale the statefullset command:
+kubectl scale sts web --replica=4
+Command to delete Statefullset
+kubectl delete sts web
+---------------------------Statefullset end----------------------
+
+========================================================Persitent Volume & Persistent Volume Claim ===========================================
+Persistent Volume (PV)— A PersistentVolume (PV) is a piece of storage in the cluster that has been provisioned by an administrator or dynamically provisioned using Storage Classes.
+Persistent Volume Claim (PVC) — The storage requested by Kubernetes for its pods is known as PVC.
+
+CLUSTER Administrator creates multiple Persistent Volumes inside the cluster , PV is just the representation of the actual storage size , other specs etc which is created onto the cloud like EBS , S3 bucket etc.
+
+User creates PVC as per the requirement of the POD & kuberentes Cluster Administrator already creates Storage & PV inside the cluster . 
+As Soon PVC is created by user kubernetes binds PVC requesed by pod with PV and matches them based upopn the matching criteria like Access modes , size , Reclaim policy(Retain , delete) etc.  If PVC is deleted , then the data stored in PV can be reatin means save or we can delete if we dont want the data.
+1PV can bind to one PVC only . If one more PVC is there but dont have PV matching that PVC then it has to wait(Pending	).
+POD starts using that Volume after binding .
+
+3 Access Modes types:
+1.ReadWriteOnce:A pod can do Read & write both operation on that storage 
+2.ReadWriteMany:Multiple Pod can acces the data & perform read & write operation on that storage
+3.ReadOnlyMany:Multiple Pod will just read the data 
+
+• Cluster administrator creates the Storage in Cloud (AWS, GCP--EBS ,S3) and creates respective PV inside cluster of the storage created in Cloud. 
+And User creates a PVC as per his requirement of POD after which Kubernetes matches the specs like Size , Access Modes and bind PVC with PV .Then POD can use that PV for his storage pupose .
+• Static Provisioning is when we are doing  above process manually .
+
+Dynamic Provisioning : CLUSTER administrator creates different types of Storage classes into the cluster , then Pod creates a PVC  in which it mentions the storage class .
+AFter that The Storage class create that storage on Cloud provider on the basis of storage class and provisioner along that create the PV on the cluster .
+Post PV is present on cluster then Kubernetes binds the PVC with PV . And POD uses the PV for storing the data.
+
+volumeBindingMode: WaitForFirstConsumer
+in Storageclass.yaml file we need to provide volumeBindingMode -- Immediate or WaitForFirstConsumer.
+Immediate - PVC create--> SC will create Storage & PV on cluster then --> KUBERNETES bind the PVC & PV .
+WaitForFirstConsumer- Firt POD should be there then user will create PVC -->SC will create Storage & PV on cluster then --> KUBERNETES bind the PVC & PV .
+
+
+
+apiVersion: storage.k8s.io/v1
+kind: Storageclass
+metadata :
+name: standard
+provisioner: kubernetes. io/aws-ebs
+parameters :
+type: gp2
+reclaimP01icy: Retain
+
+-------------------PV.yaml------------
+apiVersion: vl
+kind: PersistentV01ume
+metadata :
+name: pv-l
+spec:
+capacity:
+storage: 5Gi
+accessmodes :
+  - ReadWriteOnce
+persistentVolume
+awsE1asticB10ckStore :
+volumeID: "<volume id>"
+fsType: ext
+Rec1aimP01icy: Retain
+---
+nfs:
+path: /tmp
+server: 172.17.e.2
+
+-------------------PVC clain=m.yaml------------
+apiVersion: VI
+kind: persistentV01 umeC1aim
+metadata:
+name: myclaim
+spec :
+resources :
+requests:
+storage: 8Gi
+accessModes :
+- ReadWriteOnce
+
+
+========================================
+What is the life cycle of PV in Kubernetes?
+PVs and PVCs follow a lifecycle that starts with provisioning, moves on to binding, which is followed by using, and then can shift to reclaiming, retaining, and finally deletion.
 =======================================================================================================================================================================
-docker top <containername >- to see CPU memor of an container .
-
-
-sudo apt-get update && sudo apt install docker.io -y
-docker system df
-docker image prune -s  (Clean up command to free disk usage )
-
-
 Namespace - We can share the same cluster with Devloper & QA people with the help of Namespace .
-
-COntrol Plane- Master is control plane
+Control Plane- Master is control plane
 
 ========================
 Features of Kubernetes are :
@@ -718,19 +1019,83 @@ Loadbalancing:
  So if we want to delete the Node its not possible , we have to dleete the complete deployment from Workloads,or set replica to 1 and then delete
 
 Replicas can be managed using deployment
+====================================================================ANSIBLE================================================================================================
+Ansible: Its an Open source s/w provisioning ,Configuration managemnet & app-deployment/management/operation tool.
 
-=========================
-Statefullset:
+execute a ansible file : ansible-playbook --inventory inventory/vm-setup-playbook/hosts ansible-handlers-playbook. yml
+                     ansible-playbook --specify n of inventory/path of host file/name of the playbook.
 
 
+What is Ansible Galaxy: ?
+Galaxy is a repository of Ansible roles that can be shared among users and can be directly dropped into playbooks for execution. It is also used for the distribution of packages containing roles, plugins, and modules also known as collection. Eg Commands : ansible-galaxy init nginxrole
 
-================
-Ansible:Its an Open source s/w provisioning ,Configuration managemnet & app-deployment/management/operation toolzx
+What is Ansible roles : ? https://www.youtube.com/watch?v=jZep1jU396g&t=0s
+Ans: Roles in ansible is a pre-defined directory structure that is utilized to put the individual pieces of playbook in to , to make it easier to re-use and share.In Ansible, the role is the primary mechanism for breaking a playbook into multiple files. This simplifies writing complex playbooks, and it makes them easier to reuse.
+Ans: ansible-galaxy init "role_name"    --> It will create file structure or folder for a role .
+***************************************Role Directory structure**********************
+•defaults: Contains default variables for the role. Variables in default have the lowest priority so they are easy to override..
+•vars: Contains variables for the role. Variables in vars have higher priority than variables in defaults directory..
+•tasks: Contains the main list of steps to be executed by the role.
+•files: Contains files which we want to be copied to the remote host. We don't need to specify a path of resources stored in this directory.
+•templates: Contains file template which supports modifications from the role.
+•meta: Contains metadata of role like an author, support platforms, dependencies.
+• handlers: Contains handlers which can be invoked by "notify" directives and are
+associated with service.
+
 Ansible is a Configuration managemnet tool which can work without any agent.After creating an EC2 we have to do many configuration in the instance and if there is 100+ VM than it will be tough to do so on all VM . We can automate this thing with ansible .So here Ansible tool will be used to configure all the VM  .
 Ansible saves time and performs the repeated activity in less time incomparision to Manual work by any indidvidual.
 other tools also available like puppet , chef, CF engine, Saltstack etc.
 
 Ansible connects with other machines with the help of ssh(Client connects server with the help of ssh, No special agent required).
+
+What is Ansible Vault: ?
+Ansible vault is used to keep sensitive data such as passwords instead of placing it as plaintext in playbooks or roles. Any structured data file or any single value inside the YAML file can be encrypted by Ansible.
+
+ansible vault commands:
+ansible-vault create group_vars/my_vault.yml
+ansible-vault edit group_vars/my_vault.yml
+ansible-vault encrypt group_vars/plain_text_secret_file.txt    [Encypt existing file]
+openssl rand -base64 2048 > pass_file/ansible-vault.pass       {to provide base64 encytion to a file}
+# Vault file - my_vault.yml
+ansible-playbook --inventory inventory/ansible-vault/hosts ansible-vault-playbook.yml -e @group_vars/my_vault.yml --ask-vault-pass
+
+What is the ad-hoc command in Ansible: ?
+Ad-hoc commands are like one-line playbooks to perform a specific task only. The syntax for the ad-hoc command is
+•     ansible [host pattern] -m [module] -a "[module options]"	
+ansible all 
+modules-File, Ping, Copy, Yum, User, Service, Shell
+module options: 
+If we want reboot all servers . Or We need to stop the service for weekend or on any festive day.
+Example of Adhoc command
+ansible testservers —m file -a "dest=/root/file state—directory"
+ansible testservers -m shell -a "mkdir test"
+ansible testservers —m copy —a "src=/ root/index.txt dest=/root/test"   Using Copy Module 
+ansible testservers -m yum -a "name=wget state—present"                 Using yum Module 
+ansible testservers -m service -a "name=httpd state—started"
+ansible testservers -a "/sbin/reboot"
+
+What does ‘become: yes’ mean in Ansible playbooks?
+Ans:worker node should become a manager node
+
+What's the Ansible Playbook execution order: ?
+Ans:Playbook->Play->Tasks->Task
+
+What are the features of Ansible?
+Ans:Agentless – Unlike puppet or chef there is no software or agent managing the nodes.
+	SSH – Passwordless network authentication which makes it more secure and easy to set up.
+	Manage Inventory – Machines’ addresses are stored in a simple text format and we can add different sources of truth to pull the list using plugins such as Openstack, Rackspace, etc.
+
+Explain how you will copy files recursively onto a target host?
+There’s a copy module that has a recursive parameter in it but there’s something called synchronize which is more efficient for large numbers of files. 
+For example:
+- synchronize:
+   src: /first/absolute/path
+   dest: /second/absolute/path
+   delegate_to: "{{ inventory_hostname }}"
+	
+What are handlers: ?
+Handlers are like special tasks which only run if the Task contains a “notify” directive. Handlers are usually used to start, restart, reload and stop services on target nodes only when there is a change in the state of the task, and not when no change is made.
+Eg:For example, if a config file is changed, then the task referencing the config file templating operation may notify a service restart handler.
 
 Patching activity - updates the packages of the OS . Monthly/weekly activity in all companies. we run apt get update command.
 Features of Ansible :
@@ -742,11 +1107,11 @@ Some Keywords in Ansible:
 Master ansible :A process on the machine that provides the server.
 Target Machine:A machine we are about to configure with ansible.
 Task: The activity or configs (install, delete etc) we want to perform in VM is written in Playbook .
-Playbook - It is a yaml file . where ansible commands are written and yml  is executed on a target machine. Task are mentioned in the yaml file
-host Inventory file - All the target IP/Instance name  are available on which the configuration is set to perform.
+Playbook: - It is a yaml file . where ansible commands are written and yml  is executed on a target machine. Task are mentioned in the yaml file
+host Inventory file : - All the target IP/Instance name  are available on which the configuration is set to perform.
 
 
-Modules: Its read made functions whcih are available that we can use if required. 
+Modules: Its ready made functions whcih are available that we can use if required. 
 
 CMDB: All the details that we doing are saved on CMDB(database), provided by ansible.
 
@@ -754,14 +1119,64 @@ Plugins: for external connectivity , nit much requie=red ansible is enough.
 
 ANSIBLE MASTER --> PLAYBOOK --> HOST Inventory --> ==============SSH======>>>>>> TARTGET 1 , TARGET 2 , TARGET 3 ......
 
-Ansible Roles- Its like a function or module
+Ansible Roles: - Its like a function or module
+Roles are ways of automatically loading certain vars_files, tasks, and handlers based on a known file structure. Grouping content by roles also allows easy sharing of roles with other users. Role Directory Structure  tasks/handlers/files/templates/vars/defaults/meta.
 
+The default location for this file is /etc/ansible/hosts . 
+
+What is dynamic inventory : ?
+A dynamic inventory is a script written in Python, PHP, or any other programming language. It comes in handy in cloud environments such as AWS where IP addresses change once a virtual server is stopped and started again.
+install ec2 plugin - ansible—galaxy collection install amazon.aws
+file name should be aws.ec2.yml
+install pip 
+install boto 3 - python3 get-pip.py 
+we use aws ec2 docmentation  plugin 
+plugin: amazon.aws.aws_ec2
+regions:
+  - us-east-1
+  
+ansible-inventory -i aws_ec2.yaml —list   [gives list of EC2 in us-east-1]
+create iam role and in ec2 attach that role in security.
+if we need particular tags then we can customize from same doc and apply
+ansible aws_ec2 —i aws_ec2.yamI —m yum —a 'name=git state=present' ——private—key=ec2.pem ——become     adhoc command
+ansible aws_ec2 —1 au5_ec2.yaml —m ping pem   adhoc command
+https://docs.ansible.com/ansible/latest/collections/amazon/aws/aws_ec2_inventory.html#examples
+
+What is a vault file in Ansible: ?
+Ansible Vault is a feature of ansible that allows you to keep sensitive data such as passwords or keys in encrypted files, rather than as plaintext in playbooks or roles. 
+
+What is the concept of dynamic inventory?
 How to create Ansible roles?
 ansible-galaxy init nginxrole          here we are creating nginx install role               
 
 Node: if any software is installed into the VM then this VM is called Node . Like docker is installed in any VM so it will be called Node.
+Write basic : create Ansible playbook name install_nginx.yaml to install Nginx server on all hosts mentioned in inventory.cfg under web group.
+---
+- hosts: web
+  tasks:
+    - name: install nginx
+      apt: name=nginx state=latest
+    - name: start nginx
+      service:
+          name: nginx
+          state: started
 
-==========================================TERAFORM====is free Open source=========================
+What is fact in Ansible : ?
+Ansible facts are data related to your remote systems(Target Mchines), including operating systems, IP addresses, attached filesystems,cpu , memory ,disks and more. You can access this data in the ansible_facts variable. By default, you can also access some Ansible facts as top-level variables with the ansible_ prefix.
+1. Ansible first executes gatehring facts before executing other tasks in playbook. 
+2. Ansible fact is helpful to know what is Target Machine.
+3. If we want to disable the fact then go to that playbook after host entry enter and write gather_facts: no (It will pace up the execution speed of Playbook)
+
+when: ansible_facts ['os_famity'] == "Debian"  (using this , like a condition to check for OS and do action accordingly)
+
+ansible "i.p of Target Machine" -m setup  
+(This command provides all the facts for the T.M )
+
+What is Role Dependencies : ?
+Ans: Role dependencies are prerequisites, not true dependencies.Ansible loads all listed roles, runs the roles listed under dependencies first, then runs the role that lists them. The play object is the parent of all roles, including roles called by a dependencies list.
+• Role dependencies are stored in the meta/main.yml file within the role directory. 
+•Ansible always executes roles listed in dependencies before the role that lists them. Ansible executes this pattern recursively when you use the roles keyword. 
+==========================================TERAFORM Start=============================================================================================================
 Terraform supports all CLoud provider.
 Teraform: Infrastructure development can be achieved with the terraform.
 Infrastructure can be generated with the help of code  using Terraform tool. 
@@ -803,6 +1218,100 @@ terraform va9lidate --> The terraform validate command is used to validate the s
 
 Terraform v1.5.5 - security reason . before version access key & pwd was to be kept in main file . but not now
 
+
+Questions: 
+
+How to create resources using a loop in terraform: ?
+ANs: USing COunt/for_each , Eg Creating 2 subnet we use 2 count . For CIDR range 10.20.0.0/24 can't be same for both subnet so we will use variables.tf file where we will define the CIDR 2block . 
+resource "aws_subnet" "subnetl" {
+  count =2     | for_each = var.sub_cidrs   when using for each
+  vpc_id = aws_vpc.main.id
+  cidr_block = var.sub_cidrs[count.index)     | each.value    when use for_each
+  availability_zone== "us—east—1a"
+  tags = {
+  Name= "Subnet1"
+  Location = "India"
+  }
+}  
+  
+
+variable "sub_cidrs" {
+  type    = set(string)    --> when use for_each
+default   = ["10.20.ø.ø/24, "1ø.2ø.1.ø/24"]
+
+What are data sources: ?
+ANs: IF we want some list from source outside the terraform we use data source like if we want list of availabilty zones in subnet .
+
+WHAT IS TERRAFORM MODULE: ?
+Ans: Terraform Module is the logical grouping of Resources .
+A Terraform module is a collection of configuration files in a single directory. Modules encapsulate groups of resources that are used together for a specific task. They reduce the amount of code you need to write. 
+
+what is terraform state locking: ?
+Ans: Terraform state locking is a mechanism that prevents multiple simultaneous writes to the state file.State locking ensures that only one operation occurs at a time. It happens automatically on all operations that could write state. You won't see any message that it is happening.
+
+WHat is terraform state file: ?
+Ans: State file keeps the track of resources which terraform is managing , whatever resource created in terraform .
+
+What is backend in terraform : ?
+Ans: A backend defines where Terraform stores its state data files.
+There are two types of backends in Terraform: 
+• Local and remote: The local backend stores state file on your local filesystem, while the remote backend stores it on a remote service like AWS S3, Google Cloud Storage, or Terraform Cloud.
+
+How do you handle secrets in terraform: ?
+Ans: Put the sensitive information into remote backend and enforce it with strong IAM access or RBAC , Encrypt it . So that only restricted people can have access to Secrets .
+
+What is local variable in terraform : ?
+Ans: Giving a local variable which we can use instead of writing some long exprssions in code which makes it difficult to write repeatedly.
+
+What is the Terraform Refresh Command: ? 
+Ans: The terraform refresh command reads the current settings from all managed remote objects and updates the Terraform state to match.
+
+what is resource graph in terraform: ?
+Ans: Terraform builds a dependency graph from configurations and walks this graph to generate plans, refresh state, and more. The dependency graph is a visual representation of the infrastructure defined in Terraform code. The graph is made up of nodes that represent: 
+Resource node: Represents a single resource
+Resource meta node: Represents a group of resources
+Provider configuration node: Represents the time to fully configure a provider
+
+what is terraform state rollback: ?
+Ans: lets assume your terraform state is in S3 bucket ,we have used remote backend and used s3 for storing the state file . S3 is versioned so s3 always keeps the copy of current and previous state , so copy the old state file to local machine and push the new state to remote backend and run terraform commands init,plan,apply in this way we can rollback the older state of terraform.
+
+What is Terraform Taint: ?
+Ans: Terraform taint command informs Terraform that a particular object has become degraded or damaged and needed to be replaced in next Apply.
+
+• terraform state list               (get the list of resource )
+• terraform taint "resource name"      (Mark the resource as taint )
+• terraform apply                   (When ever we will use apply next it will ,it will be replaced)
+• terraform untaint "resource name"
+terraform apply -replace="resource_name"   (Instead of using taint directly use this command to replace a damage resource)
+terraform apply --auto-approve
+
+Who creates the "terraform.tfstate.backup" file and under which scenario it is created: ?
+Backup state file is automatically created, when terraform destroy command is executed .The above is done to restore infrastructure to the same state, prior running 
+terraform destroy command.
+
+If you again want to use the terraform.tfstate.backup then rename it to terraform.tfstate and again run Terraform apply Command , resource will be created again. 
+WHen we do any change in state file then automatically it will create a terraform.tfstate.backup file. when we perform taint then also backup file generated
+Difference b/t local variable & variable : ?
+Ans:
+
+How to manage multipe Enviroment : ?
+Ans: Source Code should be single and environmentmust be multiple like (Dev ,Prod , stage , ) for this we need 3 different state file one for each Enviroment.
+Terraform has a concept of workspaces . we can create multiple workspaces to manage multiple environment 
+
+How to create new work space;: ?
+Ans: Command --> terraform workspace new prod  | If we apply the terraform apply command into particular workspace then its separate state file will be generated .
+    
+How to switch Workspace : ?
+Ans: terraform workspace select <Name of workspace>
+
+What is the use of null resource: ?
+Ans: In Terraform, a null_resource is a resource that allows you to configure the provisioner's behavior without creating any actual infrastructure.
+The Terraform null_resource is commonly used to run scripts on a specified trigger.
+Triggering actions based on resource changes
+A null_resource doesn't create anything on its own, but you can use it to define provisioners blocks. They also have a “trigger” attribute, which can be used to recreate the resource, hence to rerun the provisioner block if the trigger is hit
+terraform workspace list 
+
+https://www.youtube.com/watch?v=OOZkOJVH0rA
 ================================================================================================================
 Jenkins Related more stuff:
 =============================================================================
@@ -824,7 +1333,7 @@ declarative pipeline code
 
 How Jenkins master/slave works?
 
- 
+
 
 
 ===================================
@@ -913,7 +1422,20 @@ AWS Lambda is an event-driven, serverless computing platform provided by Amazon 
 In AWS Lambda the code is executed based on the response of events in AWS services such as add/delete files in S3 bucket, HTTP request from Amazon API gateway, etc. However, Amazon Lambda can only be used to execute background tasks.
 
 AWS Lambda function helps you to focus on your core product and business logic instead of managing operating system (OS) access control, OS patching, right-sizing, provisioning, scaling, etc.
-
+Limitation:
+Maximum Execution Duration < 15 min
+Memory Allocation 128MB - 3008 MB
+Concurrent Executions 1000*
+Ephemeral Storage < 500 MB
+Uncompressed file size < 250 MB
+Compressed function package < 50 MB i.e zip < 50 MB
+Function Package in a region < 75 GB
+Lambda Scenarios: 
+Files change in S3 Bucket
+Update DynamoDB tables
+Push notification
+Email sending
+Hosting of Website
 =====
 VPC-A VPC is a virtual network specific to you within AWS for you to hold all your AWS services. It is a logical data center in AWS and will have gateways, route tables, network access control lists (ACL), subnets and security groups.
 =============Basic components of VPC:==========================
@@ -944,44 +1466,9 @@ Amazon EBS: Unlike Amazon S3, Amazon EBS is a block-level data storage offered b
 1.)As EBS storage is attached to the EC2 instance and is only accessible via that instance in the particular AWS region, it offers less latency than S3 which is accessed via the internet. Also, EBS uses SSD volumes which offers reliable I/O performance.
 
 2.)Amazon S3 provides durability by redundantly storing the data across multiple Availability Zones whereas EBS provides durability by redundantly storing the data in a single Availability Zone
-=============
-Difference between docker-compose and docker run  | The docker-compose command codes all runtime configuration data in an aptly named YAML file called docker-compose.yaml.
 
-1.The key difference between docker run versus docker-compose is that docker run is entirely command line based, while docker-compose reads configuration data from a YAML file. 
-2.The second major difference is that docker run can only start one container at a time, while docker-compose will configure and run multiple.
-
-version: '3.9'
-services:
-  nginx-service:
-    container_name: my-website
-    image: nginx:latest
-    cpus: 1.5
-    mem_limit: 2048m
-    ports:
-      - "80:80"
-    volumes:
-      $PWD/website:/usr/share/nginx/html
-========
-What is the difference between Docker and Swarm?
-
-Docker is the core technology that enables the creation of containers, while Docker Swarm is a tool that helps manage and scale a Docker container cluster. 
-Docker Swarm is a lightweight, easy-to-use orchestration tool with limited offerings compared to Kubernetes. 
-====
-What is Docker compose used for?
-Docker Compose is a tool that helps you define and share multi-container applications. With Compose, you can create a YAML file to define the services and with a single command, you can spin everything up or tear it all down.
-
-What is docker swarm?
-A Docker Swarm is a group of either physical or virtual machines that are running the Docker application and that have been configured to join together in a cluster.
-The activities of the cluster are controlled by a swarm manager, and machines that have joined the cluster are referred to as nodes.
-======
-ENTRYPOINT specifies the executable to be invoked when the container is started. ENTRYPOINT commands cannot be overridden or ignored, even when you run the container with command line arguments.
-ENTRYPOINT instructions can be used for both single-purpose and multi-mode docker images where you want a specific command to run upon the container start.
-
-CMD: Sets default parameters that can be overridden from the Docker command line interface (CLI) while running a docker container.
 ============
-Kubernetes runs containers on a cluster of virtual machines (VMs). It determines where
-to run containers, monitors the health of containers, and manages the full lifecycle of VM
-instances. This collection of tasks is known as container orchestration.
+Kubernetes runs containers on a cluster of virtual machines (VMs). It determines where to run containers, monitors the health of containers, and manages the full lifecycle of VM instances. This collection of tasks is known as container orchestration.
 
 =========What is Htop command======
 The htop command is used to manage the system processes like CPU & memory consumption, running tasks, and details of each system process. This command is utilized to find the process for a specific user, highlight certain processes, sort processes based on columns, filter the processes, and many more.
@@ -1009,11 +1496,6 @@ CMD [ "/bin/sh", "-c", "export" ]
 Overwriting the ENV when we want to run the container command:Here we are overwriting the ENV variable Devlopment to production at run time
 docker container run --env MY_ENV=production docker-demo:v2  
 
-
-ADD vs COPY in Docker File:
-1) COPY can’t take remote URLs as source, whereas ADD can.
-2) COPY can’t extract a tar file directly into the destination.
-
 =============What is System manager & secret Manager?
 These are used to store the User name & password safely ,securely and can be accessed when needed ,like CICD docker user & pwd for registry , 
 For Database we highly use secret manager as the data is very critical so we can't compromise on security.
@@ -1026,48 +1508,76 @@ Also Hashicorp vault is there which is a Open source tool to manage and store th
 ==============
 What is the location of logs in EC2?
 Ans : etc/car/logs/messages
+==============================================Shell Scripting : =====================================================================================
 
-Monitoring-kubernetes-tutorial-using-grafana-and-Prometheus
-Step 1 Create a GKE cluster
-Step 2 Create a Namespace monitor (good practice)
-kubectl create ns monitor
-Step 3 go to helm repo (code) of Promothus and grafana Helm code is available on
-https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack
-Step 4 Add the repo in helm
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-helm repo update
-helm repo list
-Step 5 Install the Grafana and Promothus
-helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack --namespace monitor
-"kube-prometheus-stack" is the name of the release. You can change this if you want.
-"prometheus-community/kube-prometheus-stack" is the name of the chart.
-"monitor" is the name of the namespace where we are going to deploy the operator.
+User (Owner): 
+group: 
+others:
+4 - read 2 -write 1- execute 
 
-Step 6 You can verify your installation using:
-kubectl get pods -n monitor
-Step 7 create a service of grafana
-Grafana Service :- create a service Of on 3000 port as a loadbalancer
-or
-kubectl expose deployment kube-prometheus-stack-grafana --port—3000 -- 	target-port--3000 --name=grafana --type=LoadBalancer -n monitor
-Step 8 verify service and unlock grafana
-kubectl get svc -n monitor
-admin/prom-operator
-Step 9 Explore Autoconfigured grafana dashboards
-Some Dashbords
-General / Kubernetes / Compute Resources / Cluster
-General / Kubernetes / Compute Resources / Namespace (Pods)
-Step 1() Delete the Helm chart
-helm uninstall [RELEASE_NAME]
+ps -ef - to list the process details
+ps -ef | grep "keyword"
+ps -ef | awk F" " '{print $2} - It will print whatever is in second column oof ps -ef .
+Advance level Command: Best Practice 
+set -x (x)  Debug mode -     To set the script in debug mode.
+set -e           # exits the script when there is an error in the script .
+set -o pipefail # 
+
+curl - retrieves the information from internet not download it. curl "link" | grep error
+wget - Download the information from Internet to your machine . cat "log.txt" | grep error
+
+sudo find / -name "keytosearch"             = Find any files in linux machine. WIll share 
+
+Hard Link: Hard links are mirror images of the originally linked files and are linked with an inode number. A hard-linked file remains even after the original file is deleted.
+Create a Hard link:
+$ ln  [original filename] [link name]
+
+Soft Link: Generally, soft links (also referred to as Symbolic links) are linked to the file name and can reside on the same as well as different file systems. When a soft link is created or deleted, it does not affect the original file, but when the original file is deleted, the soft link stops working. 
+$ ln -s[original filename] [link name]
+
+Inode: 
+Inodes contain information about each file in the filesystem. Normally, an inode doesn't contain a file's name, which is located in a directory instead.  An inode contains information such as the type of file, the permission bits, the owner, the group, the file size, and the time when the file was modified
 
 
+How will you debug the shell script : ?
+Ans: set -x 
 
+What is crontab in Linux ? Can you provide an example of usage : ?
+ANs:Crontab is a scheduler which will schedule any script at a particular time.
 
+What are some disadvantages of Shell scripting : ?
+Errors are frequent and and a sin* error can alter the command.
+The is slow
+complex tasks aren't well to it.
+Contrary to other scripting languages. etc., it provides a minimal data structure.
+Every tirne a shee command is executaj. a rww process is launched.
 
+Networking related trouble shoot Command: 
+traceroute,
+tracepath
+How will you manage logs of a system that generate huge log files everyday:  ?
+Ans: Logrotate command 
+The logrotate command in Linux is a utility designed to simplify the management of log files. It allows system administrators to automate the process of rotating logs, compressing them to save disk space, and deleting old log files to maintain a clean and organized log directory.
+: check the /var/lib/logrotate/status file. logrotate -t 'etc/ Logrotate.d/apache
+/var/log/httpd/• {
+ekly
+create 0644 root root
+rotate 5
+Size 100M
+dateext
+atetormat
+compress
+olddir /mnt/test/
+noti fempty
 
-
-
-
-
+What is crontab: ? crontab -e 
+It is a system process that will automatically perform tasks as per the specific schedule. It is a set of commands that are used for running regular scheduling tasks.
+We need to create a crontab by cron -e specify the cron [ ***** echo 'Hello'  >> /path/to/output.txt  ]
+[Minute] [hour]   (0-59)
+[Day_of_the_Month] (1-31)
+[Month_of_the_Year] (1-12)
+[Day_of_the_Week] (0-7)
+[command]
 
 
 
